@@ -1,0 +1,12 @@
+# Composer files
+composer.dev.lock
+
+# WordPress
+/app/*
+/vendor
+/assets
+
+# Core Config Files
+!/app/.env.example
+!/app/.htaccess
+!/app/wp-config.php
