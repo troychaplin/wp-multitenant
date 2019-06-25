@@ -10,6 +10,7 @@ composer.dev.lock
 /assets
 
 # Core Config Files
+!/_example
 !/app/.env.example
 !/app/.htaccess
 !/app/wp-config.php
