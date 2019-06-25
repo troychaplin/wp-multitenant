@@ -6,9 +6,8 @@
 	"require": {
 		"php": "^7.0",
 		"composer/installers": "1.*",
-		"johnpbloch/wordpress": "5.1.1",
-		"vlucas/phpdotenv": "3.3.3",
-		"wpackagist-theme/twentyseventeen": "@stable",
+		"johnpbloch/wordpress": "5.2.2",
+		"vlucas/phpdotenv": "3.4.0",
 		"wpackagist-theme/twentynineteen": "@stable",
 		"wpackagist-plugin/akismet": "*",
 		"wpackagist-plugin/debug-bar": "*"
@@ -20,7 +19,7 @@
 		}
 	],
 	"extra": {
-		"wordpress-install-dir": "app/5.1.1",
+		"wordpress-install-dir": "app/stable",
 		"installer-paths": {
 			"assets/plugins/{$name}/": ["type:wordpress-plugin"],
 			"assets/mu-plugins/{$name}/": ["type:wordpress-muplugin"],

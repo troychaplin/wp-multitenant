@@ -1,4 +1,7 @@
 # Composer files
+composer.json
+composer.lock
+composer.dev.json
 composer.dev.lock
 
 # WordPress

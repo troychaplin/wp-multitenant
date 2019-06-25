@@ -26,14 +26,6 @@ composer update
 
 ### Local by Flywheel
 
-**WordPress Core Symlinks**
-
-Update 5.1.1 to whichever version you specify in the composer files.
-
-```
-ln -s /app/wordpress/app/5.1.1 ./app/stable
-```
-
 **Individual Site Symlinks**
 
 ```
