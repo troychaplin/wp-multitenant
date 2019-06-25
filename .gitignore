@@ -13,4 +13,4 @@ composer.dev.lock
 !/app/.env.example
 !/app/.htaccess
 !/app/wp-config.php
-!/app/wp-constant.php
+!/app/wp-constants.php
