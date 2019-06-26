@@ -11,8 +11,8 @@ composer.dev.lock
 
 # Core Config Files
 !/_example
-!/app/.env.example
-!/app/.htaccess
 !/app/wp-config.php
-!/app/wp-constants.php
-!/app/wp-env.php
+!/config/.env.example
+!/config/.htaccess-standard
+!/config/constants.php
+!/config/env-config.php
