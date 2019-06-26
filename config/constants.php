@@ -97,20 +97,20 @@ define( 'WP_DEBUG_DISPLAY', $wp_debug_display );
 $wp_cache          = true;
 $is_redis_disabled = false;
 
-if ( 'DEV' === getenv( 'ENV_CURRENT_DOMAIN' ) ) {
+if ( 'dev' === getenv( 'ENV_CURRENT_ENV' ) ) {
 	$wp_cache          = false;
 	$is_redis_disabled = true;
-}
-
-if ( ! defined( 'WP_CACHE_KEY_SALT' ) ) {
-	$md5_redis_key = md5( getenv( 'ENV_CURRENT_DOMAIN' ) . WP_INSTALL_FOLDER );
-	define( 'WP_CACHE_KEY_SALT', $md5_redis_key );
 }
 
 define( 'WP_CACHE', $wp_cache );
 define( 'WP_REDIS_DISABLED', $is_redis_disabled );
 define( 'WP_REDIS_SELECTIVE_FLUSH', true );
 define( 'WP_REDIS_MAXTTL', 300 );
+
+if ( ! defined( 'WP_CACHE_KEY_SALT' ) ) {
+	$md5_redis_key = md5( getenv( 'ENV_CURRENT_DOMAIN' ) . WP_INSTALL_FOLDER );
+	define( 'WP_CACHE_KEY_SALT', $md5_redis_key );
+}
 
 /**
  * Other global variables
