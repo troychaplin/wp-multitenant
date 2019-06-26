@@ -49,37 +49,34 @@ At the server level, all the individual site install would exist at the htdocs l
 
 ```
 htdocs
-   |__ site-one
-   |  |__ uploads
-   |  |__ wp ==> /server-path/wordpress/app/stable
-   |  |__ .htaccess ==> /server-path/wordpress/app/.htaccess
+   |__ site-install
+   |  |__ .htaccess ==> {server-path}/wordpress/config/.htaccess-standard
+   |  |__ env-config.php ==> {server-path}/wordpress/config/env-config.php
    |  |__ index.php
+   |  |__ site-config.php
+   |  |__ wp -> {server-path}/wordpress/app/stable
    |  |__ wp-config.php
-   |  |__ subsite
+   |  |__ wp-content
+   |  |  |__ mu-plugins ==> {server-path}/wordpress/assets/mu-plugins
+   |  |  |__ plugins ==> {server-path}/wordpress/assets/plugins
+   |  |  |__ themes ==> {server-path}/wordpress/assets/themes
    |  |  |__ uploads
-   |  |  |__ wp ==> /server-path/wordpress/app/stable
-   |  |  |__ .htaccess ==> /server-path/wordpress/app/.htaccess
-   |  |  |__ index.php
-   |  |  |__ wp-config.php
-   |__ site-two
-   |  |__ uploads
-   |  |__ index.php
-   |  |__ wp ==> /server-path/wordpress/app/stable
-   |  |__ .htaccess ==> /server-path/wordpress/app/.htaccess
-   |  |__ wp-config.php
+
 wordpress
    |__ app
-   |  |__ 4.9.10
-   |  |__ 5.1.1
-   |  |__ stable ==> /server-path/wordpress/app/5.1.1
-   |  |__ .htaccess
+   |  |__ stable
    |  |__ wp-config.php
    |__ assets
    |  |__ mu-plugins
    |  |__ plugins
    |  |__ themes
    |__ config
+   |  |__ .env
+      |__ .htaccess-standard
    |  |__ constants.php
+   |  |__ env-config.php
+   |  |__ wp-cli.yml
+   |__ composer.dev.json
    |__ composer.json
 ```
 
