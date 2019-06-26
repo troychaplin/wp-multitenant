@@ -24,12 +24,18 @@ composer update
 
 ## Creating Symlinks
 
-### Local by Flywheel
+Using `Local by Flywheel` site configuration as an example, the following are a series of symlinks required for both server and individual site installs.
 
-**Individual Site Symlinks**
+**Document Root**
 
 ```
-ln -s /app/wordpress/app/.htaccess ./.htaccess
+ln -s /app/wordpress/config/wp-cli.yml ./wp-cli.yml
+```
+
+**Individual Sites**
+
+```
+ln -s /app/wordpress/config/.htaccess-standard ./.htaccess
 ln -s /app/wordpress/app/stable ./wp
 ln -s /app/wordpress/assets/mu-plugins ./wp-content/mu-plugins
 ln -s /app/wordpress/assets/plugins ./wp-content/plugins

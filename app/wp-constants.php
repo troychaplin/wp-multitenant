@@ -23,15 +23,32 @@ define( 'DB_COLLATE', '' );
 $table_prefix = 'wpm_'; // @codingStandardsIgnoreLine
 
 /**
- * Set Home and Admin URLs
+ * Set WordPress Install Directory
  *
  * @since WP Multi Tenant
  * @package WordPress Constants
  * @version 1.0
  */
 define( 'WP_INSTALL_DIR', getenv( 'ENV_PUBLICPATH' ) . '/' . WP_INSTALL_FOLDER );
-define( 'WP_HOME', 'https://' . getenv( 'ENV_CURRENT_DOMAIN' ) . '/' . WP_INSTALL_FOLDER );
-define( 'WP_SITEURL', 'https://' . getenv( 'ENV_CURRENT_DOMAIN' ) . '/' . WP_INSTALL_FOLDER . '/wp' );
+
+/**
+ * Set Home and Admin URLs
+ *
+ * @since WP Multi Tenant
+ * @package WordPress Constants
+ * @version 1.0
+ */
+
+$wp_homeurl = 'https://' . getenv( 'ENV_CURRENT_DOMAIN' ) . '/' . WP_INSTALL_FOLDER;
+$wp_siteurl = 'https://' . getenv( 'ENV_CURRENT_DOMAIN' ) . '/' . WP_INSTALL_FOLDER . '/wp';
+
+if ( '' === WP_INSTALL_FOLDER ) {
+	$wp_homeurl = 'https://' . getenv( 'ENV_CURRENT_DOMAIN' );
+	$wp_siteurl = 'https://' . getenv( 'ENV_CURRENT_DOMAIN' ) . '/wp';
+}
+
+define( 'WP_HOME', $wp_homeurl );
+define( 'WP_SITEURL', $wp_siteurl );
 
 /**
  * Set paths to wp-content and plugins
