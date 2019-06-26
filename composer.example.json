@@ -1,5 +1,5 @@
 {
-	"name": "cuweb/config-composer",
+	"name": "troychaplin79/config-composer",
 	"description": "Composer setup for a WordPress Multi Tenant environment",
 	"minimum-stability": "dev",
 	"prefer-stable": true,
