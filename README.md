@@ -12,8 +12,8 @@ There are two key files that need to be modified to suit your environment.
 
 The final files are not git tracked, so duplicate the following files and remove the `example` naming convention:
 
--   `composer.example.json` will be renamed to `composer.json`
--   `/app/.env.example` will be renamed to `/app/.env`
+-   `composer.example.json` will be duplicated and renamed to `composer.json`
+-   `/config/.env.example` will be duplicated and renamed to `/config/.env`
 
 ## Updating with Composer
 
