@@ -6,6 +6,7 @@ composer.dev.lock
 
 # WordPress
 /app/*
+/config/*
 /vendor
 /assets
 
@@ -16,3 +17,4 @@ composer.dev.lock
 !/config/.htaccess-standard
 !/config/constants.php
 !/config/env-config.php
+!/config/wp-cli.yml

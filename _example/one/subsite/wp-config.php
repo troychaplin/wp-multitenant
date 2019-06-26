@@ -6,9 +6,7 @@
  * @package WordPress Config
  * @version 1.0
  */
-
-require_once '/app/wordpress/app/wp-env.php';
-// require_once getenv( 'WP_APP_PATH' ) . '/env.php';
+require_once 'env-config.php';
 
 /**
  * Include global constants
@@ -17,7 +15,6 @@ require_once '/app/wordpress/app/wp-env.php';
  * @package WordPress Config
  * @version 1.0
  */
-
 require_once 'site-config.php';
 
 /**
@@ -27,8 +24,7 @@ require_once 'site-config.php';
  * @package WordPress Config
  * @version 1.0
  */
-
-require_once getenv( 'WP_APP_PATH' ) . '/wp-constants.php';
+require_once getenv( 'WP_CONFIG_PATH' ) . '/constants.php';
 
 /**
  * Set absolute path to wp directory and include settings
@@ -37,7 +33,6 @@ require_once getenv( 'WP_APP_PATH' ) . '/wp-constants.php';
  * @package WordPress Constants
  * @version 1.0
  */
-
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', dirname( __FILE__ ) . '/wp/' );
 }
