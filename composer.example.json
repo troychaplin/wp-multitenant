@@ -1,5 +1,5 @@
 {
-	"name": "troychaplin79/config-composer",
+	"name": "cuweb/config-composer",
 	"description": "Composer setup for a WordPress Multi Tenant environment",
 	"minimum-stability": "dev",
 	"prefer-stable": true,
@@ -9,13 +9,17 @@
 		"johnpbloch/wordpress": "5.2.2",
 		"vlucas/phpdotenv": "3.4.0",
 		"wpackagist-theme/twentynineteen": "@stable",
-		"wpackagist-plugin/akismet": "*",
-		"wpackagist-plugin/debug-bar": "*"
+		"wpackagist-plugin/debug-bar": "*",
+		"troychaplin79/wp-starter": "dev-develop"
 	},
 	"repositories": [
 		{
 			"type": "composer",
 			"url": "https://wpackagist.org"
+		},
+		{
+			"type": "vcs",
+			"url": "https://github.com/troychaplin79/wp-starter"
 		}
 	],
 	"extra": {
