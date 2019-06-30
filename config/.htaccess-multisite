@@ -14,29 +14,15 @@ RewriteRule ^vendor/.*$ - [F,L]
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
 
-RewriteCond %{ENV:URI} ^$
-RewriteRule ^(.*)$ - [ENV=URI:$1]
+# add a trailing slash to /wp-admin
+RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
 
-RewriteCond %{ENV:BASE} ^$
-RewriteCond %{ENV:URI}::%{REQUEST_URI} ^(.*)::(.*?)\1$
-RewriteRule ^ - [ENV=BASE:%2]
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-l
-
-RewriteRule . %{ENV:BASE}index.php [L,QSA]
-</IfModule>
-
-# Block wp-includes folder and files
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-RewriteRule ^wp-admin/includes/ - [F,L]
-RewriteRule !^wp-includes/ - [S=3]
-RewriteRule ^wp-includes/[^/]+\.php$ - [F,L]
-RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
-RewriteRule ^wp-includes/theme-compat/ - [F,L]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^([_0-9a-zA-Z-]+/)?(wp-(content|admin|includes).*) wp/$2 [L]
+RewriteRule ^([_0-9a-zA-Z-]+/)?(.*\.php)$ wp/$2 [L]
+RewriteRule . index.php [L]
 </IfModule>
 
 # Deny access to all gulp-vars files
@@ -482,13 +468,4 @@ ServerSignature Off
 </IfModule>
 
 # BEGIN WordPress
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
-</IfModule>
-
 # END WordPress

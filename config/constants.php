@@ -10,6 +10,7 @@
 define( 'DB_USER', getenv( 'DB_USER' ) );
 define( 'DB_PASSWORD', getenv( 'DB_PASSWORD' ) );
 define( 'DB_HOST', getenv( 'DB_HOST' ) );
+
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
 
@@ -20,7 +21,7 @@ define( 'DB_COLLATE', '' );
  * @package WordPress Constants
  * @version 1.0
  */
-$table_prefix = 'wpm_'; // @codingStandardsIgnoreLine
+$table_prefix = 'wp_'; // @codingStandardsIgnoreLine
 
 /**
  * Set WordPress Install Directory
@@ -38,10 +39,10 @@ define( 'WP_INSTALL_DIR', getenv( 'ENV_PUBLICPATH' ) . '/' . WP_INSTALL_FOLDER )
  * @package WordPress Constants
  * @version 1.0
  */
-
 $wp_homeurl = 'https://' . getenv( 'ENV_CURRENT_DOMAIN' ) . '/' . WP_INSTALL_FOLDER;
 $wp_siteurl = 'https://' . getenv( 'ENV_CURRENT_DOMAIN' ) . '/' . WP_INSTALL_FOLDER . '/wp';
 
+// Remove the WP_INSTALL_FOLDER path if blank, meaning the site is a subdomain
 if ( '' === WP_INSTALL_FOLDER ) {
 	$wp_homeurl = 'https://' . getenv( 'ENV_CURRENT_DOMAIN' );
 	$wp_siteurl = 'https://' . getenv( 'ENV_CURRENT_DOMAIN' ) . '/wp';
@@ -77,6 +78,7 @@ $wp_debug         = false;
 $wp_debug_log     = false;
 $wp_debug_display = false;
 
+// Enable debugging for dev environments
 if ( 'dev' === getenv( 'ENV_CURRENT_ENV' ) ) {
 	$wp_debug         = true;
 	$wp_debug_log     = true;
@@ -94,26 +96,27 @@ define( 'WP_DEBUG_DISPLAY', $wp_debug_display );
  * @package WordPress Constants
  * @version 1.0
  */
-$wp_cache          = true;
-$is_redis_disabled = false;
+$wp_cache      = true;
+$disable_redis = false;
 
+// Disable cache for dev environments
 if ( 'dev' === getenv( 'ENV_CURRENT_ENV' ) ) {
-	$wp_cache          = false;
-	$is_redis_disabled = true;
+	$wp_cache      = false;
+	$disable_redis = true;
 }
 
 define( 'WP_CACHE', $wp_cache );
-define( 'WP_REDIS_DISABLED', $is_redis_disabled );
+define( 'WP_REDIS_DISABLED', $disable_redis );
 define( 'WP_REDIS_SELECTIVE_FLUSH', true );
 define( 'WP_REDIS_MAXTTL', 300 );
 
 if ( ! defined( 'WP_CACHE_KEY_SALT' ) ) {
-	$md5_redis_key = md5( getenv( 'ENV_CURRENT_DOMAIN' ) . WP_INSTALL_FOLDER );
-	define( 'WP_CACHE_KEY_SALT', $md5_redis_key );
+	$md5_cache_salt_key = md5( getenv( 'ENV_CURRENT_DOMAIN' ) . WP_INSTALL_FOLDER );
+	define( 'WP_CACHE_KEY_SALT', $md5_cache_salt_key );
 }
 
 /**
- * Other global variables
+ * Configure Security Settings
  *
  * @since WP Multi Tenant
  * @package WordPress Constants
@@ -121,14 +124,31 @@ if ( ! defined( 'WP_CACHE_KEY_SALT' ) ) {
  */
 define( 'FORCE_SSL_ADMIN', true );
 define( 'FORCE_SSL_LOGIN', true );
-define( 'CONCATENATE_SCRIPTS', false );
+define( 'WP_AUTO_UPDATE_CORE', false );
+define( 'AUTOMATIC_UPDATER_DISABLED', true );
+define( 'DISALLOW_FILE_EDIT', true );
+define( 'DISALLOW_FILE_MODS', false );
 
+/**
+ * Configure Editor Settings
+ *
+ * @since WP Multi Tenant
+ * @package WordPress Constants
+ * @version 1.0
+ */
 define( 'AUTOSAVE_INTERVAL', 160 );
 define( 'WP_POST_REVISIONS', 5 );
-define( 'MEDIA_TRASH', true );
 define( 'EMPTY_TRASH_DAYS', 7 );
+define( 'MEDIA_TRASH', true );
 
-define( 'AUTOMATIC_UPDATER_DISABLED', true );
-define( 'WP_AUTO_UPDATE_CORE', false );
-define( 'DISALLOW_FILE_MODS', false );
-define( 'DISALLOW_FILE_EDIT', true );
+/**
+ * Set cookie paths
+ *
+ * @since WP Multi Tenant
+ * @package WordPress Constants
+ * @version 1.0
+ */
+define( 'ADMIN_COOKIE_PATH', '/' );
+define( 'COOKIE_DOMAIN', '' );
+define( 'COOKIEPATH', '/' );
+define( 'SITECOOKIEPATH', '' );
