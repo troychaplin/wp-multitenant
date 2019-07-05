@@ -42,6 +42,7 @@ ln -s /app/wordpress/config/wp-cli.yml ./wp-cli.yml
 ln -s /app/wordpress/config/.htaccess-standard ./.htaccess
 ln -s /app/wordpress/config/env-config.php ./env-config.php
 ln -s /app/wordpress/app/stable ./wp
+mkdir wp-content
 ln -s /app/wordpress/assets/mu-plugins ./wp-content/mu-plugins
 ln -s /app/wordpress/assets/plugins ./wp-content/plugins
 ln -s /app/wordpress/assets/themes ./wp-content/themes
