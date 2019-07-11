@@ -10,12 +10,32 @@
 		"vlucas/phpdotenv": "3.4.0",
 		"wpackagist-theme/twentynineteen": "@stable",
 		"wpackagist-plugin/debug-bar": "*",
+		"troychaplin79/wp-acf-pro-functions": "dev-develop",
+		"troychaplin79/wp-functions": "dev-develop",
+		"troychaplin79/wp-gravityforms-functions": "dev-develop",
+		"troychaplin79/wp-wordpress-seo-functions": "dev-develop",
 		"troychaplin79/wp-starter": "dev-develop"
 	},
 	"repositories": [
 		{
 			"type": "composer",
 			"url": "https://wpackagist.org"
+		},
+		{
+			"type": "vcs",
+			"url": "https://github.com/troychaplin79/wp-acf-pro-functions"
+		},
+		{
+			"type": "vcs",
+			"url": "https://github.com/troychaplin79/wp-functions"
+		},
+		{
+			"type": "vcs",
+			"url": "https://github.com/troychaplin79/wp-gravityforms-functions"
+		},
+		{
+			"type": "vcs",
+			"url": "https://github.com/troychaplin79/wp-wordpress-seo-functions"
 		},
 		{
 			"type": "vcs",
