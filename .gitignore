@@ -9,10 +9,12 @@ composer.dev.lock
 /config/*
 /vendor
 /assets
+/drop-ins
 
 # Core Config Files
 !/_example
 !/app/wp-config.php
+!/drop-ins/.gitkeep
 
 # Core Config Files
 !/config/.env.example
