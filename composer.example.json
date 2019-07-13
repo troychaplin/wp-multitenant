@@ -45,8 +45,11 @@
 	"extra": {
 		"wordpress-install-dir": "app/stable",
 		"installer-paths": {
+			"assets/mu-plugins/{$name}/": [
+				"type:wordpress-muplugin",
+				"wpackagist-plugin/wp-functions"
+			],
 			"assets/plugins/{$name}/": ["type:wordpress-plugin"],
-			"assets/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
 			"assets/themes/{$name}/": ["type:wordpress-theme"]
 		}
 	}
