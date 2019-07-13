@@ -8,13 +8,15 @@ composer.dev.lock
 /app/*
 /config/*
 /vendor
-/assets
-/drop-ins
+/assets/drop-ins/*
+/assets/mu-plugins/*
+/assets/plugins/*
+/assets/themes/*
 
 # Core Config Files
 !/_example
 !/app/wp-config.php
-!/drop-ins/.gitkeep
+!/assets/drop-ins/.gitkeep
 
 # Core Config Files
 !/config/.env.example
