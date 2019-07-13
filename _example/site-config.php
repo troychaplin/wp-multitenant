@@ -24,9 +24,7 @@ define( 'WP_INSTALL_FOLDER', '' );
  * @package Site Configuration
  * @version 1.0
  */
-define( 'ENABLE_MULTISITE', false );
-
-if ( true === ENABLE_MULTISITE ) {
+if ( 'true' === getenv( 'ENV_MULTISITE' ) ) {
 	define( 'WP_ALLOW_MULTISITE', true );
 
 	// TODO: Uncomment the following constants after completing the network setup

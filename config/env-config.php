@@ -22,7 +22,7 @@ $dotenv->required(
 		'DB_USER',
 		'DB_PASSWORD',
 		'DB_HOST',
-		'ENV_CURRENT_ENV',
+		'ENV_SERVER_ENV',
 		'ENV_CURRENT_DOMAIN',
 		'ENV_BASEPATH',
 		'ENV_PUBLICPATH',
