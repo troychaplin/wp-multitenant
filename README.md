@@ -43,6 +43,8 @@ ln -s /app/wordpress/config/.htaccess-standard ./.htaccess
 ln -s /app/wordpress/config/wp-env.php ./wp-env.php
 ln -s /app/wordpress/app/stable ./wp
 mkdir wp-content
+ln -s /app/wordpress/assets/drop-ins/advanced-cache.php ./wp-content/advanced-cache.php
+ln -s /app/wordpress/assets/drop-ins/object-cache.php ./wp-content/object-cache.php
 ln -s /app/wordpress/assets/mu-plugins ./wp-content/mu-plugins
 ln -s /app/wordpress/assets/plugins ./wp-content/plugins
 ln -s /app/wordpress/assets/themes ./wp-content/themes
@@ -72,6 +74,7 @@ wordpress
    |  |__ stable
    |  |__ wp-config.php
    |__ assets
+   |  |__ drop-ins
    |  |__ mu-plugins
    |  |__ plugins
    |  |__ themes
