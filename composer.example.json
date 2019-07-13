@@ -40,5 +40,9 @@
 			"assets/plugins/{$name}/": ["type:wordpress-plugin"],
 			"assets/themes/{$name}/": ["type:wordpress-theme"]
 		}
+	},
+	"scripts": {
+		"post-install-cmd": "bash config/config.sh",
+		"post-update-cmd": "bash config/config.sh"
 	}
 }
