@@ -10,6 +10,8 @@
 		"vlucas/phpdotenv": "3.4.0",
 		"wpackagist-theme/twentynineteen": "@stable",
 		"wpackagist-plugin/debug-bar": "*",
+		"wpackagist-plugin/redis-cache": "*",
+		"wpackagist-plugin/pj-page-cache-red": "*",
 		"troychaplin79/wp-functions": "dev-master",
 		"troychaplin79/wp-starter": "dev-master"
 	},
@@ -32,7 +34,8 @@
 		"installer-paths": {
 			"assets/mu-plugins/{$name}/": [
 				"type:wordpress-muplugin",
-				"wpackagist-plugin/wp-functions"
+				"wpackagist-plugin/redis-cache",
+				"wpackagist-plugin/pj-page-cache-red"
 			],
 			"assets/plugins/{$name}/": ["type:wordpress-plugin"],
 			"assets/themes/{$name}/": ["type:wordpress-theme"]
