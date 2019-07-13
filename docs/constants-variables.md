@@ -6,8 +6,8 @@
 | DB_PASSWORD        | Set the database password                | `/path`       |
 | DB_HOST            | Set the database host                    | `/path`       |
 | ENV_CURRENT_DOMAIN | Set domain name                          | `/path`       |
-| ENV_BASEPATH       | Set base server base                     | `/path`       |
-| ENV_PUBLICPATH     | Add public path to `ENV_BASEPATH`        | `/path`       |
+| ENV_BASE_SERVER    | Set base server base                     | `/path`       |
+| ENV_PUBLICPATH     | Add public path to `ENV_BASE_SERVER`     | `/path`       |
 | WP_ROOT_PATH       | Path to gitclone of `wp-multitenant`     | `/path`       |
 | WP_CONFIG_PATH     | Path to multi tenant configuration files | `/path`       |
 | WP_STABLE_PATH     | Path to stable version of wp             | `/path`       |
