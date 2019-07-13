@@ -22,6 +22,7 @@ composer.dev.lock
 !/config/.env.example
 !/config/.htaccess-standard
 !/config/.htaccess-multisite
+!/config/config.sh
 !/config/wp-constants.php
 !/config/wp-env.php
 !/config/wp-cli.yml
