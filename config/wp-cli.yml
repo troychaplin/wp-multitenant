@@ -1,2 +1,6 @@
-# Path to WordPress
+# WP-CLI Config File
+# See options: https://make.wordpress.org/cli/handbook/config/
 path: wp
+color: true
+disabled_commands:
+    - db drop
