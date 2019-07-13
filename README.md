@@ -40,7 +40,7 @@ ln -s /app/wordpress/config/wp-cli.yml ./wp-cli.yml
 
 ```
 ln -s /app/wordpress/config/.htaccess-standard ./.htaccess
-ln -s /app/wordpress/config/env-config.php ./env-config.php
+ln -s /app/wordpress/config/wp-env.php ./wp-env.php
 ln -s /app/wordpress/app/stable ./wp
 mkdir wp-content
 ln -s /app/wordpress/assets/mu-plugins ./wp-content/mu-plugins
@@ -56,7 +56,7 @@ At the server level, all the individual site install would exist at the htdocs l
 htdocs
    |__ site-install
    |  |__ .htaccess ==> {server-path}/wordpress/config/.htaccess-standard
-   |  |__ env-config.php ==> {server-path}/wordpress/config/env-config.php
+   |  |__ wp-env.php ==> {server-path}/wordpress/config/wp-env.php
    |  |__ index.php
    |  |__ site-config.php
    |  |__ wp -> {server-path}/wordpress/app/stable
@@ -78,8 +78,8 @@ wordpress
    |__ config
    |  |__ .env
       |__ .htaccess-standard
-   |  |__ constants.php
-   |  |__ env-config.php
+   |  |__ wp-constants.php
+   |  |__ wp-env.php
    |  |__ wp-cli.yml
    |__ composer.dev.json
    |__ composer.json

@@ -18,6 +18,6 @@ composer.dev.lock
 !/config/.env.example
 !/config/.htaccess-standard
 !/config/.htaccess-multisite
-!/config/constants.php
-!/config/env-config.php
+!/config/wp-constants.php
+!/config/wp-env.php
 !/config/wp-cli.yml

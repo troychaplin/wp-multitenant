@@ -6,7 +6,7 @@
  * @package WordPress Config
  * @version 1.0
  */
-require_once 'env-config.php';
+require_once 'wp-env.php';
 
 /**
  * Include global constants
@@ -24,7 +24,7 @@ require_once 'site-config.php';
  * @package WordPress Config
  * @version 1.0
  */
-require_once getenv( 'WP_CONFIG_PATH' ) . '/constants.php';
+require_once getenv( 'WP_CONFIG_PATH' ) . '/wp-constants.php';
 
 /**
  * Set absolute path to wp directory and include settings
