@@ -137,6 +137,17 @@ ln -s /app/wordpress/assets/themes ./wp-content/themes
 
 ---
 
+# Multisite Installs
+
+To setup a multisite, follow the instructions as above to install your site. Once complete, follow these steps.
+
+-   Edit your .env file on the server, look for `ENV_MULTISITE="false"` and change this to `ENV_MULTISITE="true"`
+-   Revise your symlink to `.htaccess-standard` and ensure it is pointing to `.htaccess-multisite`
+-   Vist the admin of your site, under "Options" go to "Network Setup" and follow the instructions there.
+-   Once the network is setup, edit the `site-config.php` of your install and uncomment the constants that are labeled for multisite
+
+---
+
 ## Server Overview
 
 At the server level, all the individual site install would exist at the htdocs level, or whatever your server document root is. WordPress is kept a level higher, sitting just outside the htdocs, which makes it and any of it's plugins or themes inaccessible.
