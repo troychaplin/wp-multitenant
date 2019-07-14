@@ -106,14 +106,14 @@ if ( 'DEV' === getenv( 'ENV_SERVER_ENV' ) ) {
 }
 
 define( 'WP_CACHE', $wp_cache );
-define( 'WP_REDIS_DISABLED', $disable_redis );
-define( 'WP_REDIS_SELECTIVE_FLUSH', true );
-define( 'WP_REDIS_MAXTTL', 300 );
-
 if ( ! defined( 'WP_CACHE_KEY_SALT' ) ) {
 	$md5_cache_salt_key = md5( getenv( 'ENV_CURRENT_DOMAIN' ) . WP_INSTALL_FOLDER );
 	define( 'WP_CACHE_KEY_SALT', $md5_cache_salt_key );
 }
+
+define( 'WP_REDIS_DISABLED', $disable_redis );
+define( 'WP_REDIS_SELECTIVE_FLUSH', true );
+define( 'WP_REDIS_MAXTTL', 300 );
 
 /**
  * Configure Security Settings
@@ -124,10 +124,8 @@ if ( ! defined( 'WP_CACHE_KEY_SALT' ) ) {
  */
 define( 'FORCE_SSL_ADMIN', true );
 define( 'FORCE_SSL_LOGIN', true );
-define( 'WP_AUTO_UPDATE_CORE', false );
 define( 'AUTOMATIC_UPDATER_DISABLED', true );
 define( 'DISALLOW_FILE_EDIT', true );
-define( 'DISALLOW_FILE_MODS', false );
 
 /**
  * Configure Editor Settings
@@ -139,7 +137,6 @@ define( 'DISALLOW_FILE_MODS', false );
 define( 'AUTOSAVE_INTERVAL', 160 );
 define( 'WP_POST_REVISIONS', 5 );
 define( 'EMPTY_TRASH_DAYS', 7 );
-define( 'MEDIA_TRASH', true );
 
 /**
  * Set cookie paths

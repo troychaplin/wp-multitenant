@@ -27,7 +27,6 @@ $dotenv->required(
 		'ENV_BASE_SERVER',
 		'ENV_PUBLICPATH',
 		'WP_ROOT_PATH',
-		'WP_APP_PATH',
 		'WP_STABLE_PATH',
 		'WP_ASSETS_PATH',
 		'WP_CONFIG_PATH',
