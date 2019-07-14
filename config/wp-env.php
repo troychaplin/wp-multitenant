@@ -17,4 +17,18 @@ require_once dirname( __DIR__ ) . '/vendor/autoload.php';
  */
 $dotenv = Dotenv\Dotenv::create( __DIR__ );
 $dotenv->load();
-$dotenv->required( [ 'ENV_BASEPATH', 'ENV_PUBLICPATH', 'WP_ROOT_PATH', 'WP_STABLE_PATH', 'WP_ASSETS_PATH', 'DB_USER', 'DB_PASSWORD', 'DB_HOST' ] );
+$dotenv->required(
+	[
+		'DB_USER',
+		'DB_PASSWORD',
+		'DB_HOST',
+		'ENV_SERVER_ENV',
+		'ENV_CURRENT_DOMAIN',
+		'ENV_BASE_SERVER',
+		'ENV_PUBLICPATH',
+		'WP_ROOT_PATH',
+		'WP_STABLE_PATH',
+		'WP_ASSETS_PATH',
+		'WP_CONFIG_PATH',
+	]
+);
