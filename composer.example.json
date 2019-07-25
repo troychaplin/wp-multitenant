@@ -12,17 +12,12 @@
 		"wpackagist-plugin/debug-bar": "*",
 		"wpackagist-plugin/redis-cache": "*",
 		"wpackagist-plugin/pj-page-cache-red": "*",
-		"troychaplin79/wp-homepage": "dev-master",
 		"troychaplin79/wp-starter": "dev-master"
 	},
 	"repositories": [
 		{
 			"type": "composer",
 			"url": "https://wpackagist.org"
-		},
-		{
-			"type": "vcs",
-			"url": "https://github.com/troychaplin79/wp-homepage"
 		},
 		{
 			"type": "vcs",
