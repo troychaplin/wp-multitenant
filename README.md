@@ -211,7 +211,7 @@ All environment variables can be found in `/wordpress/config/.env`
 | DB_USER            | Set the databse username                 |
 | DB_PASSWORD        | Set the database password                |
 | DB_HOST            | Set the database host                    |
-| ENV_SERVER_ENV     | Set development environment              |
+| ENV_CURRENT_ENV    | Set development environment              |
 | ENV_CURRENT_DOMAIN | Set domain name                          |
 | ENV_MULTISITE      | Enables multisite for server             |
 | ENV_BASE_SERVER    | Set base server path                     |
