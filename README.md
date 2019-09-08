@@ -48,6 +48,12 @@ composer update
 
 Once the composer update has finished, navigate to the `config` folder and edit the `.env` to change `ENV_CURRENT_DOMAIN` to the domain you provided when setting up you.
 
+### Other Composer Commands
+
+-   `composer update --no-interaction --prefer-dist` - clean update using gitattribute files and not creating git tracked folders
+-   `composer install --no-interaction --prefer-dist` - uses lock file for faster updated based on the same "update" command
+-   `COMPOSER=composer.devsite.json composer update --no-interaction --prefer-dist`
+
 ### WP-CLI Config
 
 To allow wp-cli to function in your multitenant environment you need to point to the `wp-cli.yml` file that exists in the multitenant app folder. To do this, right click on the local site in flywheel and click `Open site SSH`, and run the following commands:
