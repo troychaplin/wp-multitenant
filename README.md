@@ -52,7 +52,7 @@ Once the composer update has finished, navigate to the `config` folder and edit 
 
 -   `composer update --no-interaction --prefer-dist` - clean update using gitattribute files and not creating git tracked folders
 -   `composer install --no-interaction --prefer-dist` - uses lock file for faster updated based on the same "update" command
--   `COMPOSER=composer.devsite.json composer update --no-interaction --prefer-dist`
+-   `COMPOSER=composer.dev.json composer update --no-interaction --prefer-dist`
 
 ### WP-CLI Config
 
