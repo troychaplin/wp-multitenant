@@ -1,12 +1,10 @@
 # WP Multi Tenant
 
-_Version 1.0.0_
+_Version 1.0.1_
 
 A multi tenant application is an architectural concept in which a single instance of a piece of software is configured to serve multiple customers, often times called tenants. In a multi tenant WordPress environment, each tenant would share the same core configuration, themes, plugins, and more, while keeping its data and uploads as a separate entity.
 
 This project intends to offer anyone the ability to run a small handful, or hundreds of individual WordPress installations using one core set of configuration files, making maintenance and updates a breeze.
-
-**Note:** This project is in development. Do not use this for anything more than a dev environment. Proper docs and a full release will be done at a later date.
 
 ---
 
@@ -47,6 +45,12 @@ composer update
 ```
 
 Once the composer update has finished, navigate to the `config` folder and edit the `.env` to change `ENV_CURRENT_DOMAIN` to the domain you provided when setting up you.
+
+### Other Composer Commands
+
+-   `composer update --no-interaction --prefer-dist` - clean update using gitattribute files and not creating git tracked folders
+-   `composer install --no-interaction --prefer-dist` - uses lock file for faster updated based on the same "update" command
+-   `COMPOSER=composer.dev.json composer update --no-interaction --prefer-dist`
 
 ### WP-CLI Config
 
@@ -205,7 +209,7 @@ All environment variables can be found in `/wordpress/config/.env`
 | DB_USER            | Set the databse username                 |
 | DB_PASSWORD        | Set the database password                |
 | DB_HOST            | Set the database host                    |
-| ENV_SERVER_ENV     | Set development environment              |
+| ENV_CURRENT_ENV    | Set development environment              |
 | ENV_CURRENT_DOMAIN | Set domain name                          |
 | ENV_MULTISITE      | Enables multisite for server             |
 | ENV_BASE_SERVER    | Set base server path                     |

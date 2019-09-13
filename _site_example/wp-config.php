@@ -1,4 +1,4 @@
-<?php
+<?php // @codingStandardsIgnoreLine
 /**
  * Include global env vars
  *
@@ -24,7 +24,7 @@ require_once 'site-config.php';
  * @package WordPress Config
  * @version 1.0
  */
-require_once getenv( 'WP_CONFIG_PATH' ) . '/wp-constants.php';
+require_once getenv('WP_CONFIG_PATH') . '/wp-constants.php';
 
 /**
  * Set absolute path to wp directory and include settings
@@ -33,8 +33,8 @@ require_once getenv( 'WP_CONFIG_PATH' ) . '/wp-constants.php';
  * @package WordPress Constants
  * @version 1.0
  */
-if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', dirname( __FILE__ ) . '/wp/' );
+if (! defined('ABSPATH')) {
+    define('ABSPATH', dirname(__FILE__) . '/wp/');
 }
 
 require_once ABSPATH . 'wp-settings.php';
