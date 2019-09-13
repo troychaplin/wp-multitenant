@@ -1,27 +1,31 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented in this file. Sections include Added, Changed, Fixed, and Removed.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-## [0.0.0] - 2019-06-05
+## [1.0.1] - 2019-07-14
 
 ### Added
 
--   Note any addition to the project
+-   Added additional composer commands to readme
 
 ### Changed
 
--   Note any changes to the project
-
-### Fixed
-
--   Note anything fixed in the project
+-   Updated code to meet PSR2 standards
+-   Updating info in package.json
+-   Updated env vars in readme
+-   Updated composer commands in readme
 
 ### Removed
 
--   Note anything removed from the project
+-   Removed WordPress specific code from .htaccess-standard
+-   Removed info in readme that recommended to not use this app in prod, this is now prod ready
 
----
+## [1.0.0] - 2019-07-14
+
+### Added
+
+-   Merged release branch 1.0.0 into master
