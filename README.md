@@ -6,8 +6,6 @@ A multi tenant application is an architectural concept in which a single instanc
 
 This project intends to offer anyone the ability to run a small handful, or hundreds of individual WordPress installations using one core set of configuration files, making maintenance and updates a breeze.
 
-**Note:** This project is in development. Do not use this for anything more than a dev environment. Proper docs and a full release will be done at a later date.
-
 ---
 
 # Getting Started
