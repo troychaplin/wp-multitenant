@@ -26,3 +26,6 @@ composer.dev.lock
 !/config/wp-constants.php
 !/config/wp-env.php
 !/config/wp-cli.yml
+
+# Setup Scripts
+/scripts/install.sh
