@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Specify database name
  *
@@ -6,7 +7,8 @@
  * @package Site Configuration
  * @version 1.0
  */
-define('DB_NAME', 'db_name');
+
+define('DB_NAME', 'database_name');
 
 /**
  * Specify install folder
@@ -15,10 +17,11 @@ define('DB_NAME', 'db_name');
  * @package Site Configuration
  * @version 1.0
  */
-define('WP_INSTALL_FOLDER', '');
+
+define('WP_INSTALL_FOLDER', 'full_site_path');
 
 /**
- * Enable Multisite
+ * Multisite Specific Constants
  *
  * @since WP Multi Tenant
  * @package Site Configuration
@@ -26,11 +29,10 @@ define('WP_INSTALL_FOLDER', '');
  */
 if ('true' === getenv('ENV_MULTISITE')) {
     define('WP_ALLOW_MULTISITE', true);
-
-    // TODO: Uncomment the following constants after completing the network setup
+    // NOTE: These must be uncommented after network setup
     // define( 'MULTISITE', true );
     // define( 'SUBDOMAIN_INSTALL', false );
-    // define( 'DOMAIN_CURRENT_SITE', getenv( 'ENV_CURRENT_DOMAIN' ) );
+    // define( 'DOMAIN_CURRENT_SITE',  getenv( 'ENV_CURRENT_DOMAIN' ) );
     // define( 'PATH_CURRENT_SITE', '/' );
     // define( 'SITE_ID_CURRENT_SITE', 1 );
     // define( 'BLOG_ID_CURRENT_SITE', 1 );
@@ -42,7 +44,6 @@ if ('true' === getenv('ENV_MULTISITE')) {
  * @since WP Multi Tenant
  * @package Site Configuration
  * @version 1.0
- * @see https://api.wordpress.org/secret-key/1.1/salt/
  */
 define('AUTH_KEY', 'put your unique phrase here');
 define('SECURE_AUTH_KEY', 'put your unique phrase here');
