@@ -84,6 +84,8 @@ popd
 echo -e "\n--------------------------------------------------------------------\n"
 echo -e "Database for $FOLDER_PATH has been created and default has been imported"
 
+rm install.sh
+
 echo -e "\n--------------------------------------------------------------------\n"
 echo -e "\e[92m\e[1mSite installation has successfully complete\n"
 echo -e "\e[0m--------------------------------------------------------------------\n"
