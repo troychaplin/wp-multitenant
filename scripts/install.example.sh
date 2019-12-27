@@ -7,15 +7,12 @@ if [[ ! $1 ]]; then
 elif [ "local" = $1 ]; then
   MULTITENANT_PATH=/app/wordpress
   PUBLIC_PATH=/app/public
-  BASE_DOMAIN_URL=dev.carleton.ca
 elif [ "dev" = $1 ]; then
   MULTITENANT_PATH=/path_to_server
   PUBLIC_PATH=/app/public
-  BASE_DOMAIN_URL=devsite.carleton.ca
 elif [ "prod" = $1 ]; then
   MULTITENANT_PATH=/path_to_server
   PUBLIC_PATH=/app/public
-  BASE_DOMAIN_URL=carleton.ca
 fi
 
 # Set vars for parent level or second level sites
@@ -28,7 +25,6 @@ fi
 echo -e "\n--------------------------------------------------------------------\n"
 echo -e "\n--------------------------------------------------------------------\n"
 echo -e "Multi Tenant Path: $MULTITENANT_PATH"
-echo -e "Base Domain URL: $BASE_DOMAIN_URL"
 echo -e "Install Folder Path: $FOLDER_PATH"
 echo -e "\n--------------------------------------------------------------------\n"
 echo -e "\n--------------------------------------------------------------------\n"
@@ -64,6 +60,7 @@ echo -e "\n--------------------------------------------------------------------\
 echo -e "Install site files have been copied to $FOLDER_PATH"
 
 # Create symlinks
+ln -s $MULTITENANT_PATH/config/wp-cli.yml ./$FOLDER_PATH/wp-cli.yml
 ln -s $MULTITENANT_PATH/config/.htaccess ./$FOLDER_PATH/.htaccess
 ln -s $MULTITENANT_PATH/app/stable ./$FOLDER_PATH/wp
 ln -s $MULTITENANT_PATH/assets/mu-plugins ./$FOLDER_PATH/wp-content/mu-plugins
@@ -82,11 +79,10 @@ echo -e "Symlinks for $FOLDER_PATH have been created"
 # Create database
 pushd $FOLDER_PATH
 wp db create --allow-root
-wp rewrite flush --allow-root
 popd
 
 echo -e "\n--------------------------------------------------------------------\n"
-echo -e "Database for $FOLDER_PATH has been created"
+echo -e "Database for $FOLDER_PATH has been created and default has been imported"
 
 echo -e "\n--------------------------------------------------------------------\n"
 echo -e "\e[92m\e[1mSite installation has successfully complete\n"
