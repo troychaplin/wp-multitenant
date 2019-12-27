@@ -4,15 +4,16 @@
 	"minimum-stability": "dev",
 	"prefer-stable": true,
 	"require": {
-		"php": "^7.0",
+		"php": "^7.2",
 		"composer/installers": "1.*",
-		"johnpbloch/wordpress": "5.2.2",
+		"johnpbloch/wordpress": "*",
 		"vlucas/phpdotenv": "3.4.0",
 		"troychaplin79/wp-starter": "dev-master",
 		"wpackagist-theme/twentynineteen": "@stable",
 		"wpackagist-plugin/debug-bar": "*",
-		"wpackagist-plugin/redis-cache": "*",
-		"wpackagist-plugin/pj-page-cache-red": "*"
+		"wpackagist-plugin/pj-page-cache-red": "*",
+		"wpackagist-plugin/query-monitor": "*",
+		"wpackagist-plugin/redis-cache": "*"
 	},
 	"repositories": [
 		{
@@ -32,12 +33,16 @@
 				"wpackagist-plugin/redis-cache",
 				"wpackagist-plugin/pj-page-cache-red"
 			],
-			"assets/plugins/{$name}/": ["type:wordpress-plugin"],
-			"assets/themes/{$name}/": ["type:wordpress-theme"]
+			"assets/plugins/{$name}/": [
+				"type:wordpress-plugin"
+			],
+			"assets/themes/{$name}/": [
+				"type:wordpress-theme"
+			]
 		}
 	},
 	"scripts": {
-		"post-install-cmd": "bash config/config.sh",
-		"post-update-cmd": "bash config/config.sh"
+		"post-install-cmd": "bash scripts/composer.sh",
+		"post-update-cmd": "bash scripts/composer.sh"
 	}
 }
