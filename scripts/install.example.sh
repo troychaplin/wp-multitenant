@@ -61,7 +61,7 @@ echo -e "Install site files have been copied to $FOLDER_PATH"
 
 # Create symlinks
 ln -s $MULTITENANT_PATH/config/wp-cli.yml ./$FOLDER_PATH/wp-cli.yml
-ln -s $MULTITENANT_PATH/config/.htaccess ./$FOLDER_PATH/.htaccess
+ln -s $MULTITENANT_PATH/config/.htaccess-standard ./$FOLDER_PATH/.htaccess
 ln -s $MULTITENANT_PATH/app/stable ./$FOLDER_PATH/wp
 ln -s $MULTITENANT_PATH/assets/mu-plugins ./$FOLDER_PATH/wp-content/mu-plugins
 ln -s $MULTITENANT_PATH/assets/plugins ./$FOLDER_PATH/wp-content/plugins
