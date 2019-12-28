@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [1.1.2] - 2019-12-28
+
+### Fixed
+
+- Updated incorrect symlink to drop-in files in install script
+
 ## [1.1.1] - 2019-12-27
 
 ### Fixed

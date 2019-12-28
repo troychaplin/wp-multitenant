@@ -1,6 +1,6 @@
 # WP Multi Tenant
 
-_Version 1.1.1_
+_Version 1.1.2_
 
 A multi tenant application is an architectural concept in which a single instance of a piece of software is configured to serve multiple customers, often times called tenants. In a multi tenant WordPress environment, each tenant would share the same core configuration, themes, plugins, and more, while keeping its data and uploads as a separate entity.
 
