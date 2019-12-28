@@ -63,15 +63,13 @@ echo -e "Install site files have been copied to $FOLDER_PATH"
 ln -s $MULTITENANT_PATH/config/wp-cli.yml ./$FOLDER_PATH/wp-cli.yml
 ln -s $MULTITENANT_PATH/config/.htaccess-standard ./$FOLDER_PATH/.htaccess
 ln -s $MULTITENANT_PATH/app/stable ./$FOLDER_PATH/wp
+ln -s $MULTITENANT_PATH/assets/drop-ins/advanced-cache.php ./$FOLDER_PATH/wp-content/advanced-cache.php
+ln -s $MULTITENANT_PATH/assets/drop-ins/object-cache.php ./$FOLDER_PATH/wp-content/object-cache.php
 ln -s $MULTITENANT_PATH/assets/mu-plugins ./$FOLDER_PATH/wp-content/mu-plugins
 ln -s $MULTITENANT_PATH/assets/plugins ./$FOLDER_PATH/wp-content/plugins
 ln -s $MULTITENANT_PATH/assets/themes ./$FOLDER_PATH/wp-content/themes
 ln -s $MULTITENANT_PATH/config/db-config.php ./$FOLDER_PATH/db-config.php
 ln -s $MULTITENANT_PATH/config/wp-env.php ./$FOLDER_PATH/wp-env.php
-ln -s $MULTITENANT_PATH/drop-ins/advanced-cache.php ./$FOLDER_PATH/wp-content/advanced-cache.php
-ln -s $MULTITENANT_PATH/drop-ins/db.php ./$FOLDER_PATH/wp-content/db.php
-ln -s $MULTITENANT_PATH/drop-ins/db-error.php ./$FOLDER_PATH/wp-content/db-error.php
-ln -s $MULTITENANT_PATH/drop-ins/object-cache.php ./$FOLDER_PATH/wp-content/object-cache.php
 
 echo -e "\n--------------------------------------------------------------------\n"
 echo -e "Symlinks for $FOLDER_PATH have been created"
