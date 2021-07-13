@@ -130,7 +130,6 @@ All environment variables can be found in `/wordpress/config/.env`
 | ENV_CURRENT_ENV    | Set development environment              |
 | ENV_MULTISITE      | Enables multisite for server             |
 | ENV_BASE_SERVER    | Set base server path                     |
-| ENV_PUBLICPATH     | Add public path to `ENV_BASE_SERVER`     |
 | WP_ROOT_PATH       | Path to gitclone of `wp-multitenant`     |
 | WP_STABLE_PATH     | Path to stable version of wp             |
 | WP_ASSETS_PATH     | Path to wp themes and plugins            |

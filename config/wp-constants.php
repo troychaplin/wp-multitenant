@@ -24,15 +24,6 @@ define('DB_COLLATE', '');
 $table_prefix = 'wp_'; // @codingStandardsIgnoreLine
 
 /**
- * Set WordPress Install Directory
- *
- * @since WP Multi Tenant
- * @package WordPress Constants
- * @version 1.0
- */
-define('WP_INSTALL_DIR', getenv('ENV_PUBLICPATH') . '/' . WP_INSTALL_FOLDER);
-
-/**
  * Set Home and Admin URLs
  *
  * @since WP Multi Tenant
@@ -58,7 +49,8 @@ define('WP_SITEURL', $wp_siteurl);
  * @package WordPress Constants
  * @version 1.0
  */
-define('WP_CONTENT_DIR', WP_INSTALL_DIR . '/wp-content');
+// define('WP_CONTENT_DIR', WP_INSTALL_DIR . '/wp-content');
+define('WP_CONTENT_DIR', getenv('WP_ASSETS_PATH'));
 define('WP_CONTENT_URL', WP_HOME . '/wp-content');
 
 define('WP_PLUGIN_DIR', getenv('WP_ASSETS_PATH') . '/plugins');
@@ -100,7 +92,7 @@ $wp_cache      = true;
 $disable_redis = false;
 
 // Disable cache for dev environments
-if ('DEV' === getenv('ENV_CURRENT_ENV')) {
+if ('dev' === getenv('ENV_CURRENT_ENV')) {
     $wp_cache      = false;
     $disable_redis = true;
 }
