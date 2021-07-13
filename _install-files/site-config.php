@@ -18,7 +18,7 @@ define('DB_NAME', 'database_name');
  * @version 1.0
  */
 
-define('ENV_CURRENT_DOMAIN', 'domain_name');
+define('CURRENT_DOMAIN', 'domain_name');
 
 /**
  * Specify install folder
@@ -42,7 +42,7 @@ if ('true' === getenv('ENV_MULTISITE')) {
     // NOTE: These must be uncommented after network setup
     // define( 'MULTISITE', true );
     // define( 'SUBDOMAIN_INSTALL', false );
-    // define( 'DOMAIN_CURRENT_SITE',  ENV_CURRENT_DOMAIN );
+    // define( 'DOMAIN_CURRENT_SITE',  CURRENT_DOMAIN );
     // define( 'PATH_CURRENT_SITE', '/' );
     // define( 'SITE_ID_CURRENT_SITE', 1 );
     // define( 'BLOG_ID_CURRENT_SITE', 1 );

@@ -39,13 +39,13 @@ define('WP_INSTALL_DIR', getenv('ENV_PUBLICPATH') . '/' . WP_INSTALL_FOLDER);
  * @package WordPress Constants
  * @version 1.0
  */
-$wp_homeurl = 'https://' . ENV_CURRENT_DOMAIN . '/' . WP_INSTALL_FOLDER;
-$wp_siteurl = 'https://' . ENV_CURRENT_DOMAIN . '/' . WP_INSTALL_FOLDER . '/wp';
+$wp_homeurl = 'https://' . CURRENT_DOMAIN . '/' . WP_INSTALL_FOLDER;
+$wp_siteurl = 'https://' . CURRENT_DOMAIN . '/' . WP_INSTALL_FOLDER . '/wp';
 
 // Remove the WP_INSTALL_FOLDER path if blank, meaning the site is a subdomain
 if ('' === WP_INSTALL_FOLDER) {
-    $wp_homeurl = 'https://' . ENV_CURRENT_DOMAIN;
-    $wp_siteurl = 'https://' . ENV_CURRENT_DOMAIN . '/wp';
+    $wp_homeurl = 'https://' . CURRENT_DOMAIN;
+    $wp_siteurl = 'https://' . CURRENT_DOMAIN . '/wp';
 }
 
 define('WP_HOME', $wp_homeurl);
@@ -107,7 +107,7 @@ if ('DEV' === getenv('ENV_CURRENT_ENV')) {
 
 define('WP_CACHE', $wp_cache);
 if (! defined('WP_CACHE_KEY_SALT')) {
-    $md5_cache_salt_key = md5(ENV_CURRENT_DOMAIN . WP_INSTALL_FOLDER);
+    $md5_cache_salt_key = md5(CURRENT_DOMAIN . WP_INSTALL_FOLDER);
     define('WP_CACHE_KEY_SALT', $md5_cache_salt_key);
 }
 

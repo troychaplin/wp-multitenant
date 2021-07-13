@@ -13,12 +13,12 @@ $install_path_parts = explode( '/', $install_path );
 $install_path_count = count( $install_path_parts );
 
 while ( $install_path_count > 0 ) {
-	$install_path = $_SERVER['DOCUMENT_ROOT'] . implode( '/', $install_path_parts ) . '/wp-config.php';
+    $install_path = $_SERVER['DOCUMENT_ROOT'] . implode( '/', $install_path_parts ) . '/wp-config.php';
 
-	if ( file_exists( $install_path ) ) {
-		include $install_path;
-		break;
-	} else {
-		array_pop( $install_path_parts );
-	}
+    if ( file_exists( $install_path ) ) {
+        include $install_path;
+        break;
+    } else {
+        array_pop( $install_path_parts );
+    }
 }
