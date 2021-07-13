@@ -24,7 +24,6 @@ $dotenv->required(
         'DB_HOST',
         'ENV_MULTISITE',
         'ENV_CURRENT_ENV',
-        'ENV_CURRENT_DOMAIN',
         'ENV_BASE_SERVER',
         'ENV_PUBLICPATH',
         'WP_ROOT_PATH',
