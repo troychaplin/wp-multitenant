@@ -478,5 +478,3 @@ ServerSignature Off
     <IfModule mod_mime.c>
         AddEncoding gzip              svgz
     </IfModule>
-
-</IfModule>
