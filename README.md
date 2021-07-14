@@ -40,7 +40,7 @@ The following are the steps to setup the wp-multitenant repo.
 | ENV_BASE_SERVER | Set base server path (`/path_to_server`)                     |
 | WP_ROOT_PATH    | Path to cloned repo `wp-multitenant`                         |
 
-**Note:** If you cloned the repo into anything other than `wp-multitenant` you will need to change its reference in the `WP_ROOT_PATH` env var
+**Note:** If you cloned the repo into anything other than `wp-multitenant` change the reference in the `WP_ROOT_PATH`
 
 ### Composer Install
 
