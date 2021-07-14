@@ -24,28 +24,19 @@ define('DB_COLLATE', '');
 $table_prefix = 'wp_'; // @codingStandardsIgnoreLine
 
 /**
- * Set WordPress Install Directory
- *
- * @since WP Multi Tenant
- * @package WordPress Constants
- * @version 1.0
- */
-define('WP_INSTALL_DIR', getenv('ENV_PUBLICPATH') . '/' . WP_INSTALL_FOLDER);
-
-/**
  * Set Home and Admin URLs
  *
  * @since WP Multi Tenant
  * @package WordPress Constants
  * @version 1.0
  */
-$wp_homeurl = 'https://' . getenv('ENV_CURRENT_DOMAIN') . '/' . WP_INSTALL_FOLDER;
-$wp_siteurl = 'https://' . getenv('ENV_CURRENT_DOMAIN') . '/' . WP_INSTALL_FOLDER . '/wp';
+$wp_homeurl = 'https://' . CURRENT_DOMAIN . '/' . WP_INSTALL_FOLDER;
+$wp_siteurl = 'https://' . CURRENT_DOMAIN . '/' . WP_INSTALL_FOLDER . '/wp';
 
 // Remove the WP_INSTALL_FOLDER path if blank, meaning the site is a subdomain
 if ('' === WP_INSTALL_FOLDER) {
-    $wp_homeurl = 'https://' . getenv('ENV_CURRENT_DOMAIN');
-    $wp_siteurl = 'https://' . getenv('ENV_CURRENT_DOMAIN') . '/wp';
+    $wp_homeurl = 'https://' . CURRENT_DOMAIN;
+    $wp_siteurl = 'https://' . CURRENT_DOMAIN . '/wp';
 }
 
 define('WP_HOME', $wp_homeurl);
@@ -58,7 +49,8 @@ define('WP_SITEURL', $wp_siteurl);
  * @package WordPress Constants
  * @version 1.0
  */
-define('WP_CONTENT_DIR', WP_INSTALL_DIR . '/wp-content');
+// define('WP_CONTENT_DIR', WP_INSTALL_DIR . '/wp-content');
+define('WP_CONTENT_DIR', getenv('WP_ASSETS_PATH'));
 define('WP_CONTENT_URL', WP_HOME . '/wp-content');
 
 define('WP_PLUGIN_DIR', getenv('WP_ASSETS_PATH') . '/plugins');
@@ -100,14 +92,14 @@ $wp_cache      = true;
 $disable_redis = false;
 
 // Disable cache for dev environments
-if ('DEV' === getenv('ENV_CURRENT_ENV')) {
+if ('dev' === getenv('ENV_CURRENT_ENV')) {
     $wp_cache      = false;
     $disable_redis = true;
 }
 
 define('WP_CACHE', $wp_cache);
 if (! defined('WP_CACHE_KEY_SALT')) {
-    $md5_cache_salt_key = md5(getenv('ENV_CURRENT_DOMAIN') . WP_INSTALL_FOLDER);
+    $md5_cache_salt_key = md5(CURRENT_DOMAIN . WP_INSTALL_FOLDER);
     define('WP_CACHE_KEY_SALT', $md5_cache_salt_key);
 }
 
