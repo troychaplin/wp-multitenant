@@ -24,9 +24,7 @@ The following are the steps to setup the wp-multitenant repo.
 
 - Clone repo into multitenant `/path_to_server/wp-multitenant`
 
-Notes:
-
-- You can are not limited to using `wp-multitenant` in the path, change it in the `.env` file as shown in the next section.
+**Note:** You can are not limited to using `wp-multitenant` in the path, change it in the `.env` file as shown in the next section.
 
 ### Env Vars
 
@@ -42,10 +40,10 @@ Notes:
 | ENV_BASE_SERVER | Set base server path (excludes `wp-multitenant` clone folder) |
 | WP_ROOT_PATH    | Path to gitclone of `wp-multitenant`                          |
 
-Notes:
+**Notes:**
 
 - `ENV_BASE_SERVER` - Change to the path on your server where this repo exists (this excludes the repo name itself, ie: `wordpress`)
-- `WP_ROOT_PATH` - If you changed the `wordpress` name when cloning the repo change its reference here 
+- `WP_ROOT_PATH` - If you changed the `wordpress` name when cloning the repo change its reference here
 
 ### Composer Install
 
@@ -53,9 +51,7 @@ Notes:
 - Update the file to include any plugins and/or themes you wish
 - Open terminal and from `/path_to_server/wordpress` run `composer install`
 
-Notes:
-
-- Additional information about working with composer can be found in the `technical docs` (coming soon)
+**Note:** Additional information about working with composer can be found in the `technical docs` (coming soon)
 
 # Step 2: Installing WordPress
 
