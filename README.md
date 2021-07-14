@@ -8,15 +8,15 @@ This project intends to offer anyone the ability to run a small handful, or hund
 
 ## 1. Server Overview
 
-This repo is intended to live outside of where your domain exists. Typically a server might have a structure similar to this:
+For WP Multi Tenant to function it should sit at the same level (or higher) then the domain paths. It would look similar to the following.
 
-- `/path_to_server/example.com`
-- `/path_to_server/sample.org`
-- `/path_to_server/demo.ca`
-
-The wp-multitenant repo is designed to live at:
-
-- `/path_to_server/wordpress`
+```
+/path_to_server
+    |__ domain.com
+    |__ example.com
+    |__ demo.com
+    |__ wp-multitenant
+```
 
 ## 2. Multitenant Setup
 
@@ -28,6 +28,28 @@ AddDesc
 
 **Note:** you can are not limited to using `wordpress` in the path name, but be sure to also change it in the `.env` file as per the instructions below.
 
+### Env Vars
+
+AddDesc
+
+- Duplicate `/config/env.example` and name it `.env`
+
+Env vars that need updating are as follows:
+
+| Env Variable    | Description                                                  |
+| :-------------- | :----------------------------------------------------------- |
+| DB_USER         | Set databse username                                         |
+| DB_PASSWORD     | Set database password                                        |
+| DB_HOST         | Set database host (may not be required, localhost is common) |
+| ENV_CURRENT_ENV | Set development environment                                  |
+| ENV_BASE_SERVER | Set base server path (excludes `wordpress` clone folder)     |
+| WP_ROOT_PATH    | Path to gitclone of `wp-multitenant`                         |
+
+Notes:
+
+- `ENV_BASE_SERVER` - Change to the path on your server where this repo exists (this excludes the repo name itself, ie: `wordpress`)
+- `WP_ROOT_PATH` - If you changed the `wordpress` name when cloning the repo change its reference here 
+
 ### Composer Install
 
 AddDesc
@@ -35,20 +57,6 @@ AddDesc
 - Duplicate `composer.example.json` and named it `composer.json`
 - Update the file to include any plugins and/or themes you wish
 - Open terminal and from `/path_to_server/wordpress` run `composer install`
-
-### Env Vars
-
-AddDesc
-
-- Duplicate `/config/env.example` and name it `.env`
-
-Items to change:
-
-- `DB_USER` / `DB_PASSWORD` - Match these with your database credentials
-- `DB_HOST` - This might not be required, localhost is commonly used
-- `ENV_CURRENT_ENV` - Change to the environment you are configuring, this package currently supports `local`, `dev` and `prod`
-- `ENV_BASE_SERVER` - Change to the path on your server where this repo exists (this excludes the repo name itself, ie: `wordpress`)
-- `WP_ROOT_PATH` - If you changed the `wordpress` name when cloning the repo change its reference here 
 
 ## 3. Installing WordPress
 
