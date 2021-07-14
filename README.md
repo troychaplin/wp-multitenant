@@ -24,7 +24,7 @@ The following are the steps to setup the wp-multitenant repo.
 
 - Clone repo into multitenant `/path_to_server/wp-multitenant`
 
-**Note:** You can are not limited to using `wp-multitenant` in the path. Set that to whatever you want but be sure to change it in the `.env` file as shown in the next section.
+**Note:** You can are limited to using `wp-multitenant` in the path. Set that to whatever you want but be sure to change it in the `.env` file as shown in the next section.
 
 ### Env Vars
 
