@@ -45,7 +45,6 @@ The following are the steps to setup the wp-multitenant repo.
 ### Composer Install
 
 - Duplicate `composer.example.json` and named it `composer.json`
-- Update the file to include any plugins and/or themes you wish
 - Open terminal and from `/path_to_server/wordpress` run `composer install`
 
 **Note:** Additional information about working with composer can be found in the `technical docs` (coming soon)
