@@ -20,7 +20,7 @@ For WP Multi Tenant to function it should sit at the same level (or higher) then
 
 The following are the steps to setup the wp-multitenant repo.
 
-## Clone Repo
+### Clone Repo
 
 - Clone repo into multitenant `/path_to_server/wp-multitenant`
 
@@ -28,7 +28,7 @@ Notes:
 
 - You can are not limited to using `wp-multitenant` in the path, change it in the `.env` file as shown in the next section.
 
-## Env Vars
+### Env Vars
 
 - Duplicate `/config/env.example` and name it `.env`
 - Env vars that need updating are as follows:
@@ -47,7 +47,7 @@ Notes:
 - `ENV_BASE_SERVER` - Change to the path on your server where this repo exists (this excludes the repo name itself, ie: `wordpress`)
 - `WP_ROOT_PATH` - If you changed the `wordpress` name when cloning the repo change its reference here 
 
-## Composer Install
+### Composer Install
 
 - Duplicate `composer.example.json` and named it `composer.json`
 - Update the file to include any plugins and/or themes you wish
@@ -61,7 +61,7 @@ Notes:
 
 AddIntro
 
-## Install Script
+### Install Script
 
 - Duplicate `/scripts/install.example.sh` and name it `install.sh`
 - Copy `/scripts/install.sh` to the root of the domain folder (ie: `/path_to_server/example.com`)
@@ -69,7 +69,7 @@ AddIntro
 
 **Note:** when running the installer you are required to use `local`, `dev` or `prod`
 
-## Update Site Config
+### Update Site Config
 
 In the domain folder you'll see a file named `site-config.php`, edit the following:
 
