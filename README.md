@@ -40,10 +40,7 @@ The following are the steps to setup the wp-multitenant repo.
 | ENV_BASE_SERVER | Set base server path (excludes `wp-multitenant` clone folder) |
 | WP_ROOT_PATH    | Path to gitclone of `wp-multitenant`                          |
 
-**Notes:**
-
-- `ENV_BASE_SERVER` - Change to the path on your server where this repo exists (this excludes the repo name itself, ie: `wordpress`)
-- `WP_ROOT_PATH` - If you changed the `wordpress` name when cloning the repo change its reference here
+**Note:** If you cloned the repo into anything other than `wp-multitenant` you will need to change its reference in the `WP_ROOT_PATH` env var
 
 ### Composer Install
 
@@ -55,7 +52,7 @@ The following are the steps to setup the wp-multitenant repo.
 
 # Step 2: Installing WordPress
 
-AddIntro
+This repo includes a simple installation script that will build the folder and folder structure and the create necessary symlinks.
 
 ### Install Script
 
@@ -74,3 +71,6 @@ In the domain folder you'll see a file named `site-config.php`, edit the followi
 
 ----------------
 
+## Credit
+
+Thanks to Mark Jaquith for the [base setup concept](https://gist.github.com/markjaquith/6225805) that helped bring this entire idea to life.
