@@ -24,21 +24,21 @@ The following are the steps to setup the wp-multitenant repo.
 
 - Clone repo into multitenant `/path_to_server/wp-multitenant`
 
-**Note:** You can are not limited to using `wp-multitenant` in the path, change it in the `.env` file as shown in the next section.
+**Note:** You can are not limited to using `wp-multitenant` in the path. Set that to whatever you want but be sure to change it in the `.env` file as shown in the next section.
 
 ### Env Vars
 
 - Duplicate `/config/env.example` and name it `.env`
 - Env vars that need updating are as follows:
 
-| Env Variable    | Description                                                   |
-| :-------------- | :------------------------------------------------------------ |
-| DB_USER         | Set databse username                                          |
-| DB_PASSWORD     | Set database password                                         |
-| DB_HOST         | Set database host (may not be required, localhost is common)  |
-| ENV_CURRENT_ENV | Set development environment                                   |
-| ENV_BASE_SERVER | Set base server path (excludes `wp-multitenant` clone folder) |
-| WP_ROOT_PATH    | Path to gitclone of `wp-multitenant`                          |
+| Env Variable    | Description                                                  |
+| :-------------- | :------------------------------------------------------------|
+| DB_USER         | Set databse username                                         |
+| DB_PASSWORD     | Set database password                                        |
+| DB_HOST         | Set database host (may not be required, localhost is common) |
+| ENV_CURRENT_ENV | Set development environment                                  |
+| ENV_BASE_SERVER | Set base server path (`/path_to_server`)                     |
+| WP_ROOT_PATH    | Path to cloned repo `wp-multitenant`                         |
 
 **Note:** If you cloned the repo into anything other than `wp-multitenant` you will need to change its reference in the `WP_ROOT_PATH` env var
 
