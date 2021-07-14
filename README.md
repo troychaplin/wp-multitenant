@@ -6,7 +6,7 @@ A multi tenant application is an architectural concept in which a single instanc
 
 This project intends to offer anyone the ability to run a small handful, or hundreds of individual WordPress installations using one core set of configuration files, making maintenance and updates a breeze.
 
-## 1. Server Overview
+## Server Overview
 
 For WP Multi Tenant to function it should sit at the same level (or higher) then the domain paths. It would look similar to the following.
 
@@ -18,32 +18,31 @@ For WP Multi Tenant to function it should sit at the same level (or higher) then
     |__ wp-multitenant
 ```
 
-## 2. Multitenant Setup
+## Step 1: Multitenant Setup
 
-AddDesc
+The following are the steps to setup the wp-multitenant repo.
 
 ### Clone Repo
 
-- Clone repo into multitenant `/path_to_server/wordpress`
+- Clone repo into multitenant `/path_to_server/wp-multitenant`
 
-**Note:** you can are not limited to using `wordpress` in the path name, but be sure to also change it in the `.env` file as per the instructions below.
+Notes:
+
+- You can are not limited to using `wp-multitenant` in the path, change it in the `.env` file as shown in the next section.
 
 ### Env Vars
 
-AddDesc
-
 - Duplicate `/config/env.example` and name it `.env`
+- Env vars that need updating are as follows:
 
-Env vars that need updating are as follows:
-
-| Env Variable    | Description                                                  |
-| :-------------- | :----------------------------------------------------------- |
-| DB_USER         | Set databse username                                         |
-| DB_PASSWORD     | Set database password                                        |
-| DB_HOST         | Set database host (may not be required, localhost is common) |
-| ENV_CURRENT_ENV | Set development environment                                  |
-| ENV_BASE_SERVER | Set base server path (excludes `wordpress` clone folder)     |
-| WP_ROOT_PATH    | Path to gitclone of `wp-multitenant`                         |
+| Env Variable    | Description                                                   |
+| :-------------- | :------------------------------------------------------------ |
+| DB_USER         | Set databse username                                          |
+| DB_PASSWORD     | Set database password                                         |
+| DB_HOST         | Set database host (may not be required, localhost is common)  |
+| ENV_CURRENT_ENV | Set development environment                                   |
+| ENV_BASE_SERVER | Set base server path (excludes `wp-multitenant` clone folder) |
+| WP_ROOT_PATH    | Path to gitclone of `wp-multitenant`                          |
 
 Notes:
 
@@ -52,19 +51,19 @@ Notes:
 
 ### Composer Install
 
-AddDesc
-
 - Duplicate `composer.example.json` and named it `composer.json`
 - Update the file to include any plugins and/or themes you wish
 - Open terminal and from `/path_to_server/wordpress` run `composer install`
 
-## 3. Installing WordPress
+Notes:
 
-AddDesc
+- Additional information about working with composer can be found in the `technical docs` (coming soon)
+
+## Step 2: Installing WordPress
+
+AddIntro
 
 ### Install Script
-
-AddDesc
 
 - Duplicate `/scripts/install.example.sh` and name it `install.sh`
 - Copy `/scripts/install.sh` to the root of the domain folder (ie: `/path_to_server/example.com`)
