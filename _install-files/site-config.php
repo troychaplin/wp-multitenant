@@ -39,6 +39,7 @@ define('WP_INSTALL_FOLDER', 'full_site_path');
  */
 if ('true' === getenv('ENV_MULTISITE')) {
     define('WP_ALLOW_MULTISITE', true);
+
     // NOTE: These must be uncommented after network setup
     // define( 'MULTISITE', true );
     // define( 'SUBDOMAIN_INSTALL', false );

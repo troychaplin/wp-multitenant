@@ -71,6 +71,16 @@ In the domain folder you'll see a file named `site-config.php`, edit the followi
 
 ----------------
 
+## Multisite
+
+If you choose yes to setting up multisite there are a couple of manual items to update:
+
+- Edit your .env file on the server, look for `ENV_MULTISITE="false"` and change this to `ENV_MULTISITE="true"`
+- Vist the admin of your site, under `Options` go to `Network Setup` and follow the instructions there.
+- Once the network is setup, edit the `site-config.php` of your install and uncomment the constants that are labeled for multisite (lines 44-49)
+
+----------------
+
 ## Credit
 
 Thanks to Mark Jaquith for the [base setup concept](https://gist.github.com/markjaquith/6225805) that helped bring this entire idea to life.
