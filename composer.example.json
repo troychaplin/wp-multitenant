@@ -9,7 +9,7 @@
 		"johnpbloch/wordpress": "*",
 		"vlucas/phpdotenv": "3.4.0",
 		"troychaplin79/wp-starter": "dev-master",
-		"wpackagist-theme/twentynineteen": "@stable",
+		"wpackagist-theme/twentytwentyone": "@stable",
 		"wpackagist-plugin/debug-bar": "*",
 		"wpackagist-plugin/pj-page-cache-red": "*",
 		"wpackagist-plugin/query-monitor": "*",
