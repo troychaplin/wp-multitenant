@@ -57,6 +57,7 @@ This repo includes a simple installation script that will build the folder and f
 
 - Duplicate `/scripts/install.example.sh` and name it `install.sh`
 - Copy `/scripts/install.sh` to the root of the domain folder (ie: `/path_to_server/example.com`)
+- Edit the copied `install.sh` file and change `path_to_multitenant` on lines 8, 10 and 12 to reflect your paths on various server setups
 - From the domain folder run `bash install.sh local`
 
 **Note:** when running the installer you are required to use `local`, `dev` or `prod`
