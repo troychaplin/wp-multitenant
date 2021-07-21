@@ -1,6 +1,6 @@
 # WP Multitenant Overview
 
-_Version 1.1.3_
+_Version 1.1.4_
 
 A multi tenant application is an architectural concept in which a single instance of a piece of software is configured to serve multiple customers, often times called tenants. In a multi tenant WordPress environment, each tenant would share the same core configuration, themes, plugins, and more, while keeping its data and uploads as a separate entity.
 
@@ -61,13 +61,6 @@ This repo includes a simple installation script that will build the folder and f
 - From the domain folder run `bash install.sh local`
 
 **Note:** when running the installer you are required to use `local`, `dev` or `prod`
-
-### Update Site Config
-
-In the domain folder you'll see a file named `site-config.php`, edit the following:
-
-- `DB_NAME` - the name of the database for this installation of WordPress
-- `CURRENT_DOMAIN` - the domain name for this installation
 
 ----------------
 
