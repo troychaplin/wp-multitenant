@@ -10,7 +10,6 @@
 define('DB_USER', getenv('DB_USER'));
 define('DB_PASSWORD', getenv('DB_PASSWORD'));
 define('DB_HOST', getenv('DB_HOST'));
-
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
@@ -49,7 +48,6 @@ define('WP_SITEURL', $wp_siteurl);
  * @package WordPress Constants
  * @version 1.0
  */
-// define('WP_CONTENT_DIR', WP_INSTALL_DIR . '/wp-content');
 define('WP_CONTENT_DIR', getenv('WP_ASSETS_PATH'));
 define('WP_CONTENT_URL', WP_HOME . '/wp-content');
 

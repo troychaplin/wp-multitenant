@@ -91,9 +91,46 @@ All environment variables can be found in `/config/.env`
 
 ----------------
 
-## Heading
+## WordPress Constants
 
-AddInfo
+All global WordPress constants can be found in `/wordpress/config/wp-constants.php`
+
+**Note:** ** denotes items to not change this if in doubt
+
+| WordPress Constants        | Description                           |
+| :------------------------- | :------------------------------------ |
+| DB_USER                    | Gets `DB_USER` from .env file         |
+| DB_PASSWORD                | Gets `DB_PASSWORD` from .env file     |
+| DB_HOST                    | Gets `DB_HOST` from .env file         |
+| DB_CHARSET                 | Sets the database charset             |
+| DB_COLLATE                 | Sets the database collate type        |
+| WP_HOME                    | Sets URL in wp_options                |
+| WP_SITEURL                 | Sets URL in wp_options                |
+| WP_CONTENT_DIR             | Sets path for wp-content folder       |
+| WP_CONTENT_URL             | Sets URL for wp-content folder        |
+| WP_PLUGIN_DIR              | Sets path for plugins folder          |
+| WP_PLUGIN_URL              | Sets URL for plugins folder           |
+| WPMU_PLUGIN_DIR            | Sets path for mu-plugins folder       |
+| WPMU_PLUGIN_URL            | Sets URL for mu-plugins folder        |
+| WP_DEBUG                   | Sets debug options                    |
+| WP_DEBUG_LOG               | Sets option to create debug log       |
+| WP_DEBUG_DISPLAY           | Sets option to display debug errors   |
+| WP_CACHE                   | Enables or disabled cache             |
+| WP_CACHE_KEY_SALT          | Creates a unique cache key per site   |
+| WP_REDIS_DISABLED          | Enables or disables redis             |
+| WP_REDIS_SELECTIVE_FLUSH   | Allows individual site flushes        |
+| WP_REDIS_MAXTTL            | Max TTL for redis                     |
+| FORCE_SSL_ADMIN            | Force HTTPS on admin                  |
+| FORCE_SSL_LOGIN            | Force HTTPS on login                  |
+| AUTOMATIC_UPDATER_DISABLED | Disable auto-update                   |
+| DISALLOW_FILE_EDIT         | Disable theme and plugin file edits   |
+| AUTOSAVE_INTERVAL          | Sets the time for auto-save           |
+| WP_POST_REVISIONS          | Sets maxiumum post revisions          |
+| EMPTY_TRASH_DAYS           | Empty trash after X days              |
+| ADMIN_COOKIE_PATH          | Sets admin cookie URL path            |
+| COOKIE_DOMAIN              | Sets domain for cookies               |
+| COOKIEPATH                 | Sets general cookie path              |
+| SITECOOKIEPATH             | Sets specific site cookie             |
 
 ----------------
 
