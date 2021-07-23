@@ -134,13 +134,25 @@ All global WordPress constants can be found in `/wordpress/config/wp-constants.p
 
 ----------------
 
-## Heading
+## Site Install Constants
 
-AddInfo
+All site specific constants can be found in `site-config.php` for each individual site installation.
+
+| PHP Constants        | Description                              |
+| :------------------- | :--------------------------------------- |
+| DB_NAME              | Sets the database name                   |
+| CURRENT_DOMAIN       | Sets the folder structure to the install |
+| WP_ALLOW_MULTISITE   | Allow Multiste (Multisite Only)          |
+| MULTISITE            | Enable Multisite (Multisite Only)        |
+| SUBDOMAIN_INSTALL    | Use Subdomains (Multisite Only)          |
+| DOMAIN_CURRENT_SITE  | Domain (Multisite Only)                  |
+| PATH_CURRENT_SITE    | Path to current (Multisite Only)         |
+| SITE_ID_CURRENT_SITE | Site ID (Multisite Only)                 |
+| BLOG_ID_CURRENT_SITE | Blog ID (Multisite Only)                 |
 
 ----------------
 
-## Heading
+ ## Heading
 
 AddInfo
 
