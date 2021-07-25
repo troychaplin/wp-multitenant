@@ -76,7 +76,7 @@ If you choose yes to setting up multisite there are a couple of manual items to 
 
 ## Using Composer
 
-AddInfo
+Composer is a dependency manager for PHP and is used in wp-multitenant to manage versions of WordPress, themes, plugins, and more.
 
 - `composer install` - install dependencies specified in the `composer.lock` file. If no lock file is found one will be created
 - `composer update` - updated dependencies using versions specified in the `composer.json` file and generate a new lock file based
@@ -86,7 +86,16 @@ There are several [options](https://getcomposer.org/doc/03-cli.md) that can be u
 - `--prefer-dist` - update dependencies without being git tracked and without interactive questions
 - `--no-interaction` - do not ask any interactive question
 
-- `COMPOSER=composer.dev.json composer update` - example of using a uniquely named composer file
+It is possible to use several different composer files, like the following example:
+
+- `COMPOSER=composer.dev.json composer update`
+
+Resources for composer:
+
+- [Composer documentation](https://getcomposer.org/)
+- [Working with repos](https://getcomposer.org/doc/05-repositories.md)
+- [Handling private repos](https://getcomposer.org/doc/articles/handling-private-packages.md)
+- [WordPress packagist](https://wpackagist.org/)
 
 ## Server Overview
 
