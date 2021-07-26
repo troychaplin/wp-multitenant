@@ -60,6 +60,7 @@ fi
 
 # Make site directory
 mkdir .$FOLDER_PATH/wp-content
+mkdir .$FOLDER_PATH/wp-content/uploads
 
 # Create htaccess symlinks
 if [ "y" = $USE_MULTISITE ]; then

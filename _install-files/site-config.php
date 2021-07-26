@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Specify database name
+ * Specify database details
  *
  * @since WP Multi Tenant
  * @package Site Configuration

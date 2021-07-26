@@ -478,3 +478,7 @@ ServerSignature Off
     <IfModule mod_mime.c>
         AddEncoding gzip              svgz
     </IfModule>
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
