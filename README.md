@@ -45,7 +45,7 @@ The following are the steps to setup the wp-multitenant repo.
 ### Composer Install
 
 - Duplicate `composer.example.json` and named it `composer.json`
-- Open terminal and from `/path_to_server/wordpress` run `composer install`
+- Open terminal and from `/path_to_server/wp-multitenant` run `composer install`
 
 **Note:** Additional information about working with composer can be found in the `technical docs` (coming soon)
 
@@ -107,31 +107,31 @@ Symlinks are denoted with `==>`
 
 ```
 domain-one.com
-    |__ .htaccess ==> {server-path}/wordpress/config/.htaccess-standard
+    |__ .htaccess ==> {server-path}/wp-multitenant/config/.htaccess-standard
     |__ index.php
     |__ site-config.php
-    |__ wp ==> {server-path}/wordpress/app/stable
-    |__ wp-env.php ==> {server-path}/wordpress/config/wp-env.php
+    |__ wp ==> {server-path}/wp-multitenant/app/stable
+    |__ wp-env.php ==> {server-path}/wp-multitenant/config/wp-env.php
     |__ wp-config.php
     |__ wp-content
-    |  |__ mu-plugins ==> {server-path}/wordpress/assets/mu-plugins
-    |  |__ plugins ==> {server-path}/wordpress/assets/plugins
-    |  |__ themes ==> {server-path}/wordpress/assets/themes
+    |  |__ mu-plugins ==> {server-path}/wp-multitenant/assets/mu-plugins
+    |  |__ plugins ==> {server-path}/wp-multitenant/assets/plugins
+    |  |__ themes ==> {server-path}/wp-multitenant/assets/themes
     |  |__ uploads
 
 
 domain-two.com
     |__ site-folder
-        |__ .htaccess ==> {server-path}/wordpress/config/.htaccess-standard
+        |__ .htaccess ==> {server-path}/wp-multitenant/config/.htaccess-standard
         |__ index.php
         |__ site-config.php
-        |__ wp ==> {server-path}/wordpress/app/stable
-        |__ wp-env.php ==> {server-path}/wordpress/config/wp-env.php
+        |__ wp ==> {server-path}/wp-multitenant/app/stable
+        |__ wp-env.php ==> {server-path}/wp-multitenant/config/wp-env.php
         |__ wp-config.php
         |__ wp-content
-        |  |__ mu-plugins ==> {server-path}/wordpress/assets/mu-plugins
-        |  |__ plugins ==> {server-path}/wordpress/assets/plugins
-        |  |__ themes ==> {server-path}/wordpress/assets/themes
+        |  |__ mu-plugins ==> {server-path}/wp-multitenant/assets/mu-plugins
+        |  |__ plugins ==> {server-path}/wp-multitenant/assets/plugins
+        |  |__ themes ==> {server-path}/wp-multitenant/assets/themes
         |  |__ uploads
 
 wordpress
@@ -172,7 +172,7 @@ All environment variables can be found in `/config/.env`
 
 ## WordPress Constants
 
-All global WordPress constants can be found in `/wordpress/config/wp-constants.php`
+All global WordPress constants can be found in `/wp-multitenant/config/wp-constants.php`
 
 **Note:** ** denotes items to not change this if in doubt
 
