@@ -18,8 +18,6 @@ composer.dev.lock
 !/_example
 !/app/wp-config.php
 !/assets/drop-ins/.gitkeep
-!/assets/plugins/index.php
-!/assets/themes/index.php
 
 # Core Config Files
 !/config/.env.example

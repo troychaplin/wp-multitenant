@@ -145,7 +145,7 @@ wordpress
     |  |__ themes
     |__ config
     |  |__ .env
-        |__ .htaccess-standard
+    |  |__ .htaccess-standard
     |  |__ wp-constants.php
     |  |__ wp-env.php
     |  |__ wp-cli.yml
