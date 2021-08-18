@@ -29,26 +29,30 @@ $table_prefix = 'wp_'; // @codingStandardsIgnoreLine
  * @package WordPress Constants
  * @version 1.0
  */
-$wp_homeurl = 'https://' . CURRENT_DOMAIN . '/' . WP_INSTALL_FOLDER;
-$wp_siteurl = 'https://' . CURRENT_DOMAIN . '/' . WP_INSTALL_FOLDER . '/wp';
-
-// Remove the WP_INSTALL_FOLDER path if blank, meaning the site is a subdomain
-if ('' === WP_INSTALL_FOLDER) {
-    $wp_homeurl = 'https://' . CURRENT_DOMAIN;
-    $wp_siteurl = 'https://' . CURRENT_DOMAIN . '/wp';
-}
-
-define('WP_HOME', $wp_homeurl);
-define('WP_SITEURL', $wp_siteurl);
 
 /**
- * Set paths to wp-content and plugins
+ * Set Home and Admin URLs, paths to wp-content, plugins and uploads
  *
  * @since WP Multi Tenant
  * @package WordPress Constants
  * @version 1.0
  */
-define('WP_CONTENT_DIR', getenv('WP_ASSETS_PATH'));
+
+$wp_homeurl     = 'https://' . CURRENT_DOMAIN;
+$wp_siteurl     = 'https://' . CURRENT_DOMAIN . '/wp';
+$wp_content_dir = $_SERVER['DOCUMENT_ROOT'] . '/wp-content';
+
+// Add the WP_INSTALL_FOLDER path if set during install
+if ('' !== WP_INSTALL_FOLDER) {
+    $wp_homeurl     = 'https://' . CURRENT_DOMAIN . '/' . WP_INSTALL_FOLDER;
+    $wp_siteurl     = 'https://' . CURRENT_DOMAIN . '/' . WP_INSTALL_FOLDER . '/wp';
+    $wp_content_dir = $_SERVER['DOCUMENT_ROOT'] . '/' . WP_INSTALL_FOLDER . '/wp-content';
+}
+
+define('WP_HOME', $wp_homeurl);
+define('WP_SITEURL', $wp_siteurl);
+
+define('WP_CONTENT_DIR', $wp_content_dir);
 define('WP_CONTENT_URL', WP_HOME . '/wp-content');
 
 define('WP_PLUGIN_DIR', getenv('WP_ASSETS_PATH') . '/plugins');
