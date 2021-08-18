@@ -6,6 +6,50 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [1.1.8] - 2021-08-18
+
+### Fixed
+
+- Fixed constant that prevented uploads from going into the site install area
+
+## [1.1.7] - 2021-07-30
+
+### Changed
+
+- Updated docs
+- Updated install script
+
+## [1.1.6] - 2021-07-25
+
+### Changed
+
+- Updated docs
+
+## [1.1.5] - 2021-07-23
+
+### Changed
+
+- Updated docs
+- Added gitattributes
+
+## [1.1.4] - Accidentally skipper
+
+## [1.1.3] - 2021-07-21
+
+### Changed
+
+- Updating files for mutli domain usage
+- Updated composer file
+- Updated install script
+- Added bedrock autoloader
+- Updated wp-constants
+- Updated readme
+- Updated install doc
+
+### Removed
+
+- Removed domain from env vars
+
 ## [1.1.2] - 2019-12-28
 
 ### Fixed
