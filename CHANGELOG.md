@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [1.2.0] - 2021-09-21
+
+### Added
+
+- Install script ask for custom wp table_prefix
+
+### Changed
+
+- Moved wp table_prefix from wp-constants.php to site-config.php install file
+
 ## [1.1.8] - 2021-08-18
 
 ### Fixed
