@@ -10,7 +10,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Added
 
-- Install script ask for custom wp table_prefix
+- Install script asks for custom wp table_prefix
+- WP Salt generation in install script
 
 ### Changed
 
