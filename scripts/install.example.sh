@@ -39,6 +39,17 @@ if [[ ! $DATABASE_NAME ]]; then
 fi
 
 echo -e "\n"
+echo -e "Set a custom database table prefix. Leave blank for wp default"
+read -r TABLE_PREFIX
+if [[ ! $TABLE_PREFIX ]]; then
+    # echo "--------------------------------------------------------------------"
+    # echo "You must specify your databse prefix";
+    # echo "--------------------------------------------------------------------"
+    # exit 1;
+    TABLE_PREFIX=wp_
+fi
+
+echo -e "\n"
 echo -e "What's your domain name? "
 read -r DOMAIN_NAME
 if [[ ! $DOMAIN_NAME ]]; then
@@ -89,6 +100,7 @@ if [[ ! $2 ]]; then
     sed \
         -e "s/full_site_path//g" \
         -e "s/database_name/$DATABASE_NAME/g" \
+        -e "s/wp_table_prefix/$TABLE_PREFIX/g" \
         -e "s/domain_name/$DOMAIN_NAME/g" \
         ./site-config-temp.php > ./site-config.php
         rm $PUBLIC_PATH/site-config-temp.php
@@ -96,6 +108,7 @@ elif [[ ! $3 ]]; then
     sed \
         -e "s/full_site_path/$2/g" \
         -e "s/database_name/$DATABASE_NAME/g" \
+        -e "s/wp_table_prefix/$TABLE_PREFIX/g" \
         -e "s/domain_name/$DOMAIN_NAME/g" \
         ./$2/site-config-temp.php > ./$2/site-config.php
         rm $PUBLIC_PATH/$2/site-config-temp.php
@@ -103,6 +116,7 @@ elif [ $3 ]; then
     sed \
         -e "s/full_site_path/$2\/$3/g" \
         -e "s/database_name/$DATABASE_NAME/g" \
+        -e "s/wp_table_prefix/$TABLE_PREFIX/g" \
         -e "s/domain_name/$DOMAIN_NAME/g" \
         ./$2/$3/site-config-temp.php > ./$2/$3/site-config.php
         rm $PUBLIC_PATH/$2/$3/site-config-temp.php
@@ -114,6 +128,7 @@ echo -e "Multitenant Path: $MULTITENANT_PATH"
 echo -e "Public Path: $PUBLIC_PATH"
 echo -e "Install Folder Path: $FOLDER_PATH"
 echo -e "Database Name: $DATABASE_NAME"
+echo -e "Table Prefix: $TABLE_PREFIX"
 echo -e "Domain Name: $DOMAIN_NAME"
 echo -e "Configure Multisite: $USE_MULTISITE"
 echo -e "\n--------------------------------------------------------------------\n"

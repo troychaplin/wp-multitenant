@@ -14,15 +14,6 @@ define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
 /**
- * Set site specific database prefix
- *
- * @since WP Multi Tenant
- * @package WordPress Constants
- * @version 1.0
- */
-$table_prefix = 'wp_'; // @codingStandardsIgnoreLine
-
-/**
  * Set Home and Admin URLs
  *
  * @since WP Multi Tenant

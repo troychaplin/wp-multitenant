@@ -31,6 +31,15 @@ define('CURRENT_DOMAIN', 'domain_name');
 define('WP_INSTALL_FOLDER', 'full_site_path');
 
 /**
+ * Set site specific database prefix
+ *
+ * @since WP Multi Tenant
+ * @package WordPress Constants
+ * @version 1.0
+ */
+$table_prefix = 'wp_table_prefix'; // @codingStandardsIgnoreLine
+
+/**
  * Multisite Specific Constants
  *
  * @since WP Multi Tenant
