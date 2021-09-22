@@ -42,10 +42,7 @@ echo -e "\n"
 echo -e "Set a custom database table prefix. Leave blank for wp default"
 read -r TABLE_PREFIX
 if [[ ! $TABLE_PREFIX ]]; then
-    # echo "--------------------------------------------------------------------"
-    # echo "You must specify your databse prefix";
-    # echo "--------------------------------------------------------------------"
-    # exit 1;
+    echo "wp_ has been set";
     TABLE_PREFIX=wp_
 fi
 
@@ -103,7 +100,7 @@ if [[ ! $2 ]]; then
         -e "s/wp_table_prefix/$TABLE_PREFIX/g" \
         -e "s/domain_name/$DOMAIN_NAME/g" \
         ./site-config-temp.php > ./site-config.php
-        rm $PUBLIC_PATH/site-config-temp.php
+        rm ./site-config-temp.php
 elif [[ ! $3 ]]; then
     sed \
         -e "s/full_site_path/$2/g" \
@@ -111,7 +108,7 @@ elif [[ ! $3 ]]; then
         -e "s/wp_table_prefix/$TABLE_PREFIX/g" \
         -e "s/domain_name/$DOMAIN_NAME/g" \
         ./$2/site-config-temp.php > ./$2/site-config.php
-        rm $PUBLIC_PATH/$2/site-config-temp.php
+        rm ./$2/site-config-temp.php
 elif [ $3 ]; then
     sed \
         -e "s/full_site_path/$2\/$3/g" \
@@ -119,7 +116,22 @@ elif [ $3 ]; then
         -e "s/wp_table_prefix/$TABLE_PREFIX/g" \
         -e "s/domain_name/$DOMAIN_NAME/g" \
         ./$2/$3/site-config-temp.php > ./$2/$3/site-config.php
-        rm $PUBLIC_PATH/$2/$3/site-config-temp.php
+        rm ./$2/$3/site-config-temp.php
+fi
+
+# Generate WP Salts
+if [[ ! $2 ]]; then
+    curl -L https://api.wordpress.org/secret-key/1.1/salt/ >> ./wp-salts-temp.php
+    sed '1s/^/<?php\n/' ./wp-salts-temp.php > ./wp-salts.php
+    rm ./wp-salts-temp.php
+elif [[ ! $3 ]]; then
+    curl -L https://api.wordpress.org/secret-key/1.1/salt/ >> ./$2/wp-salts-temp.php
+    sed '1s/^/<?php\n/' ./$2/wp-salts-temp.php > ./$2/wp-salts.php
+    rm ./$2/wp-salts-temp.php
+elif [ $3 ]; then
+    curl -L https://api.wordpress.org/secret-key/1.1/salt/ >> ./$2/$3/wp-salts-temp.php
+    sed '1s/^/<?php\n/' ./$2/$3/wp-salts-temp.php > ./$2/$3/wp-salts.php
+    rm ./$2/$3/wp-salts-temp.php
 fi
 
 echo -e "\n--------------------------------------------------------------------\n"

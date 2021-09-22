@@ -57,19 +57,3 @@ if ('true' === getenv('ENV_MULTISITE')) {
     // define( 'SITE_ID_CURRENT_SITE', 1 );
     // define( 'BLOG_ID_CURRENT_SITE', 1 );
 }
-
-/**
- * Set site specific salts
- *
- * @since WP Multi Tenant
- * @package Site Configuration
- * @version 1.0
- */
-define('AUTH_KEY', 'put your unique phrase here');
-define('SECURE_AUTH_KEY', 'put your unique phrase here');
-define('LOGGED_IN_KEY', 'put your unique phrase here');
-define('NONCE_KEY', 'put your unique phrase here');
-define('AUTH_SALT', 'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT', 'put your unique phrase here');
-define('NONCE_SALT', 'put your unique phrase here');

@@ -18,6 +18,15 @@ require_once 'wp-env.php';
 require_once 'site-config.php';
 
 /**
+ * Include WP salts
+ *
+ * @since WP Multi Tenant
+ * @package WordPress Config
+ * @version 1.0
+ */
+require_once 'wp-salts.php';
+
+/**
  * Include global constants
  *
  * @since WP Multi Tenant
