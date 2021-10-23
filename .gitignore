@@ -1,4 +1,5 @@
 # Composer files
+auth.json
 composer.json
 composer.lock
 composer.dev.json
