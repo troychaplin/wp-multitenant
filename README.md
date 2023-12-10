@@ -1,6 +1,6 @@
 # WP Multitenant Overview
 
-_Version 1.2.0_
+_Version 1.3.0_
 
 A multi tenant application is an architectural concept in which a single instance of a piece of software is configured to serve multiple customers, often times called tenants. In a multi tenant WordPress environment, each tenant would share the same core configuration, themes, plugins, and more, while keeping its data and uploads as a separate entity.
 
@@ -32,7 +32,7 @@ The following are the steps to setup the wp-multitenant repo.
 - Env vars that need updating are as follows:
 
 | Env Variable    | Description                                                  |
-| :-------------- | :------------------------------------------------------------|
+| :-------------- | :----------------------------------------------------------- |
 | DB_USER         | Set databse username                                         |
 | DB_PASSWORD     | Set database password                                        |
 | DB_HOST         | Set database host (may not be required, localhost is common) |
@@ -47,7 +47,10 @@ The following are the steps to setup the wp-multitenant repo.
 - Duplicate `composer.example.json` and named it `composer.json`
 - Open terminal and from `/path_to_server/wp-multitenant` run `composer install`
 
-**Note:** Additional information about working with composer can be found in the `technical docs` (coming soon)
+**Note:**
+
+- If you have issues with your php version not satisfying requirements add a flag and run `composer update--ignore-platform-reqs`
+- Additional information about working with composer can be found in the `technical docs` (coming soon)
 
 # Step 2: Installing WordPress
 
@@ -70,7 +73,7 @@ If you choose yes to setting up multisite there are a couple of manual items to 
 - Vist the admin of your site, under `Options` go to `Network Setup` and follow the instructions there.
 - Once the network is setup, edit the `site-config.php` of your install and uncomment the constants that are labeled for multisite (lines 44-49)
 
-----------------
+---
 
 # Additional Information
 
@@ -81,7 +84,7 @@ Composer is a dependency manager for PHP and is used in wp-multitenant to manage
 - `composer install` - install dependencies specified in the `composer.lock` file. If no lock file is found one will be created
 - `composer update` - updated dependencies using versions specified in the `composer.json` file and generate a new lock file based
 
-There are several [options](https://getcomposer.org/doc/03-cli.md) that can be used while running composer commands. 
+There are several [options](https://getcomposer.org/doc/03-cli.md) that can be used while running composer commands.
 
 - `--prefer-dist` - update dependencies without being git tracked and without interactive questions
 - `--no-interaction` - do not ask any interactive question
@@ -157,59 +160,59 @@ wordpress
 
 All environment variables can be found in `/config/.env`
 
-| Env Variable       | Description                              |
-| :----------------- | :--------------------------------------- |
-| DB_USER            | Set the databse username                 |
-| DB_PASSWORD        | Set the database password                |
-| DB_HOST            | Set the database host                    |
-| ENV_CURRENT_ENV    | Set development environment              |
-| ENV_MULTISITE      | Enables multisite for server             |
-| ENV_BASE_SERVER    | Set base server path                     |
-| WP_ROOT_PATH       | Path to gitclone of `wp-multitenant`     |
-| WP_STABLE_PATH     | Path to stable version of wp             |
-| WP_ASSETS_PATH     | Path to wp themes and plugins            |
-| WP_CONFIG_PATH     | Path to multi tenant configuration files |
+| Env Variable    | Description                              |
+| :-------------- | :--------------------------------------- |
+| DB_USER         | Set the databse username                 |
+| DB_PASSWORD     | Set the database password                |
+| DB_HOST         | Set the database host                    |
+| ENV_CURRENT_ENV | Set development environment              |
+| ENV_MULTISITE   | Enables multisite for server             |
+| ENV_BASE_SERVER | Set base server path                     |
+| WP_ROOT_PATH    | Path to gitclone of `wp-multitenant`     |
+| WP_STABLE_PATH  | Path to stable version of wp             |
+| WP_ASSETS_PATH  | Path to wp themes and plugins            |
+| WP_CONFIG_PATH  | Path to multi tenant configuration files |
 
 ## WordPress Constants
 
 All global WordPress constants can be found in `/wp-multitenant/config/wp-constants.php`
 
-**Note:** ** denotes items to not change this if in doubt
+**Note:** \*\* denotes items to not change this if in doubt
 
-| WordPress Constants        | Description                           |
-| :------------------------- | :------------------------------------ |
-| DB_USER                    | Gets `DB_USER` from .env file         |
-| DB_PASSWORD                | Gets `DB_PASSWORD` from .env file     |
-| DB_HOST                    | Gets `DB_HOST` from .env file         |
-| DB_CHARSET                 | Sets the database charset             |
-| DB_COLLATE                 | Sets the database collate type        |
-| WP_HOME                    | Sets URL in wp_options                |
-| WP_SITEURL                 | Sets URL in wp_options                |
-| WP_CONTENT_DIR             | Sets path for wp-content folder       |
-| WP_CONTENT_URL             | Sets URL for wp-content folder        |
-| WP_PLUGIN_DIR              | Sets path for plugins folder          |
-| WP_PLUGIN_URL              | Sets URL for plugins folder           |
-| WPMU_PLUGIN_DIR            | Sets path for mu-plugins folder       |
-| WPMU_PLUGIN_URL            | Sets URL for mu-plugins folder        |
-| WP_DEBUG                   | Sets debug options                    |
-| WP_DEBUG_LOG               | Sets option to create debug log       |
-| WP_DEBUG_DISPLAY           | Sets option to display debug errors   |
-| WP_CACHE                   | Enables or disabled cache             |
-| WP_CACHE_KEY_SALT          | Creates a unique cache key per site   |
-| WP_REDIS_DISABLED          | Enables or disables redis             |
-| WP_REDIS_SELECTIVE_FLUSH   | Allows individual site flushes        |
-| WP_REDIS_MAXTTL            | Max TTL for redis                     |
-| FORCE_SSL_ADMIN            | Force HTTPS on admin                  |
-| FORCE_SSL_LOGIN            | Force HTTPS on login                  |
-| AUTOMATIC_UPDATER_DISABLED | Disable auto-update                   |
-| DISALLOW_FILE_EDIT         | Disable theme and plugin file edits   |
-| AUTOSAVE_INTERVAL          | Sets the time for auto-save           |
-| WP_POST_REVISIONS          | Sets maxiumum post revisions          |
-| EMPTY_TRASH_DAYS           | Empty trash after X days              |
-| ADMIN_COOKIE_PATH          | Sets admin cookie URL path            |
-| COOKIE_DOMAIN              | Sets domain for cookies               |
-| COOKIEPATH                 | Sets general cookie path              |
-| SITECOOKIEPATH             | Sets specific site cookie             |
+| WordPress Constants        | Description                         |
+| :------------------------- | :---------------------------------- |
+| DB_USER                    | Gets `DB_USER` from .env file       |
+| DB_PASSWORD                | Gets `DB_PASSWORD` from .env file   |
+| DB_HOST                    | Gets `DB_HOST` from .env file       |
+| DB_CHARSET                 | Sets the database charset           |
+| DB_COLLATE                 | Sets the database collate type      |
+| WP_HOME                    | Sets URL in wp_options              |
+| WP_SITEURL                 | Sets URL in wp_options              |
+| WP_CONTENT_DIR             | Sets path for wp-content folder     |
+| WP_CONTENT_URL             | Sets URL for wp-content folder      |
+| WP_PLUGIN_DIR              | Sets path for plugins folder        |
+| WP_PLUGIN_URL              | Sets URL for plugins folder         |
+| WPMU_PLUGIN_DIR            | Sets path for mu-plugins folder     |
+| WPMU_PLUGIN_URL            | Sets URL for mu-plugins folder      |
+| WP_DEBUG                   | Sets debug options                  |
+| WP_DEBUG_LOG               | Sets option to create debug log     |
+| WP_DEBUG_DISPLAY           | Sets option to display debug errors |
+| WP_CACHE                   | Enables or disabled cache           |
+| WP_CACHE_KEY_SALT          | Creates a unique cache key per site |
+| WP_REDIS_DISABLED          | Enables or disables redis           |
+| WP_REDIS_SELECTIVE_FLUSH   | Allows individual site flushes      |
+| WP_REDIS_MAXTTL            | Max TTL for redis                   |
+| FORCE_SSL_ADMIN            | Force HTTPS on admin                |
+| FORCE_SSL_LOGIN            | Force HTTPS on login                |
+| AUTOMATIC_UPDATER_DISABLED | Disable auto-update                 |
+| DISALLOW_FILE_EDIT         | Disable theme and plugin file edits |
+| AUTOSAVE_INTERVAL          | Sets the time for auto-save         |
+| WP_POST_REVISIONS          | Sets maxiumum post revisions        |
+| EMPTY_TRASH_DAYS           | Empty trash after X days            |
+| ADMIN_COOKIE_PATH          | Sets admin cookie URL path          |
+| COOKIE_DOMAIN              | Sets domain for cookies             |
+| COOKIEPATH                 | Sets general cookie path            |
+| SITECOOKIEPATH             | Sets specific site cookie           |
 
 ## Site Install Constants
 
@@ -227,7 +230,7 @@ All site specific constants can be found in `site-config.php` for each individua
 | SITE_ID_CURRENT_SITE | Site ID (Multisite Only)                 |
 | BLOG_ID_CURRENT_SITE | Blog ID (Multisite Only)                 |
 
-----------------
+---
 
 # Credit
 

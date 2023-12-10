@@ -1,0 +1,8 @@
+{
+    "http-basic": {
+        "composer.deliciousbrains.com": {
+            "username": "{COMPOSER_API_USERNAME}",
+            "password": "{COMPOSER_API_PASSWORD}"
+        }
+    }
+}
