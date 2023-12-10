@@ -1,48 +1,39 @@
 {
-	"name": "troychaplin79/wp-multitenant",
-	"description": "Composer setup for a WordPress Multi Tenant environment",
-	"minimum-stability": "dev",
-	"prefer-stable": true,
-	"require": {
-		"php": "^7.2",
-		"composer/installers": "1.*",
-		"johnpbloch/wordpress": "*",
-		"vlucas/phpdotenv": "3.4.0",
-		"troychaplin79/wp-starter": "dev-master",
-		"wpackagist-theme/twentytwentyone": "@stable",
-		"wpackagist-plugin/debug-bar": "*",
-		"wpackagist-plugin/pj-page-cache-red": "*",
-		"wpackagist-plugin/query-monitor": "*",
-		"wpackagist-plugin/redis-cache": "*"
-	},
-	"repositories": [
-		{
-			"type": "composer",
-			"url": "https://wpackagist.org"
-		},
-		{
-			"type": "vcs",
-			"url": "https://github.com/troychaplin79/wp-starter"
-		}
-	],
-	"extra": {
-		"wordpress-install-dir": "app/stable",
-		"installer-paths": {
-			"assets/mu-plugins/{$name}/": [
-				"type:wordpress-muplugin",
-				"wpackagist-plugin/redis-cache",
-				"wpackagist-plugin/pj-page-cache-red"
-			],
-			"assets/plugins/{$name}/": [
-				"type:wordpress-plugin"
-			],
-			"assets/themes/{$name}/": [
-				"type:wordpress-theme"
-			]
-		}
-	},
-	"scripts": {
-		"post-install-cmd": "bash scripts/composer.sh",
-		"post-update-cmd": "bash scripts/composer.sh"
-	}
+  "name": "troychaplin79/wp-multitenant",
+  "description": "Composer setup for a WordPress Multi Tenant environment",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": "^7.2",
+    "composer/installers": "1.*",
+    "johnpbloch/wordpress": "*",
+    "vlucas/phpdotenv": "3.4.0",
+    "wpackagist-theme/twentytwentyfour": "@stable",
+    "wpackagist-plugin/debug-bar": "*",
+    "wpackagist-plugin/pj-page-cache-red": "*",
+    "wpackagist-plugin/query-monitor": "*",
+    "wpackagist-plugin/redis-cache": "*"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "extra": {
+    "wordpress-install-dir": "app/stable",
+    "installer-paths": {
+      "assets/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin",
+        "wpackagist-plugin/redis-cache",
+        "wpackagist-plugin/pj-page-cache-red"
+      ],
+      "assets/plugins/{$name}/": ["type:wordpress-plugin"],
+      "assets/themes/{$name}/": ["type:wordpress-theme"]
+    }
+  },
+  "scripts": {
+    "post-install-cmd": "bash scripts/composer.sh",
+    "post-update-cmd": "bash scripts/composer.sh"
+  }
 }
